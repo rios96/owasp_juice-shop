@@ -1,0 +1,1929 @@
+[2024-04-23 10:57:30] This is codeql database create db-javascript --language=javascript
+[2024-04-23 10:57:30] Log file was started late.
+[2024-04-23 10:57:30] [PROGRESS] database create> Initializing database at C:\upv\juice-shop\frontend\db-javascript.
+[2024-04-23 10:57:30] Running plumbing command: codeql database init --language=javascript --extractor-options-verbosity=1 --qlconfig-file=C:\upv\juice-shop\frontend\qlconfig.yml --source-root=C:\upv\juice-shop\frontend --allow-missing-source-root=false --allow-already-existing -- C:\upv\juice-shop\frontend\db-javascript
+[2024-04-23 10:57:30] Calling plumbing command: codeql resolve languages --extractor-options-verbosity=1 --format=betterjson
+[2024-04-23 10:57:31] [DETAILS] resolve languages> Scanning for [codeql-extractor.yml] from C:\codeql\codeql\
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\cpp\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\csharp\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\csv\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\go\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\html\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\java\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\javascript\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\properties\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\python\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\ruby\codeql-extractor.yml.
+[2024-04-23 10:57:33] [DETAILS] resolve languages> Parsing C:\codeql\codeql\swift\codeql-extractor.yml.
+[2024-04-23 10:57:34] [DETAILS] resolve languages> Parsing C:\codeql\codeql\xml\codeql-extractor.yml.
+[2024-04-23 10:57:34] [DETAILS] resolve languages> Parsing C:\codeql\codeql\yaml\codeql-extractor.yml.
+[2024-04-23 10:57:34] Plumbing command codeql resolve languages completed:
+                      {
+                        "aliases" : {
+                          "c" : "cpp",
+                          "c++" : "cpp",
+                          "c-c++" : "cpp",
+                          "c-cpp" : "cpp",
+                          "c#" : "csharp",
+                          "java-kotlin" : "java",
+                          "kotlin" : "java",
+                          "javascript-typescript" : "javascript",
+                          "typescript" : "javascript"
+                        },
+                        "extractors" : {
+                          "cpp" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\cpp",
+                              "extractor_options" : { }
+                            }
+                          ],
+                          "csharp" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\csharp",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'brotli' (the default, to write brotli-compressed TRAP), 'gzip', and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip|brotli)$"
+                                    }
+                                  }
+                                },
+                                "buildless" : {
+                                  "title" : "DEPRECATED - Whether to use buildless (standalone) extraction.",
+                                  "description" : "DEPRECATED: Use `--build-mode none` instead.\nA value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the extractor. The supported levels are (in order of increasing verbosity):\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "csv" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\csv"
+                            }
+                          ],
+                          "go" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\go"
+                            }
+                          ],
+                          "html" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\html"
+                            }
+                          ],
+                          "java" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\java",
+                              "extractor_options" : {
+                                "exclude" : {
+                                  "title" : "A glob excluding files from analysis.",
+                                  "description" : "A glob indicating what files to exclude from the analysis.\n",
+                                  "type" : "string"
+                                },
+                                "add_prefer_source" : {
+                                  "title" : "Whether to always prefer source files over class files.",
+                                  "description" : "A value indicating whether source files should be preferred over class files. If set to 'true', the extraction adds '-Xprefer:source' to the javac command line. If set to 'false', the extraction uses the default javac behavior ('-Xprefer:newer'). The default is 'true'.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                },
+                                "buildless" : {
+                                  "title" : "Whether to use buildless (standalone) extraction (experimental).",
+                                  "description" : "A value indicating, which type of extraction the autobuilder should perform. If 'true', then the standalone extractor will be used, otherwise tracing extraction will be performed. The default is 'false'. Note that buildless extraction will generally yield less accurate analysis results, and should only be used in cases where it is not possible to build the code (for example if it uses inaccessible dependencies).\n",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "javascript" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\javascript",
+                              "extractor_options" : {
+                                "skip_types" : {
+                                  "title" : "Skip type extraction for TypeScript",
+                                  "description" : "Whether to skip the extraction of types in a TypeScript application",
+                                  "type" : "string",
+                                  "pattern" : "^(false|true)$"
+                                }
+                              }
+                            }
+                          ],
+                          "properties" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\properties"
+                            }
+                          ],
+                          "python" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\python",
+                              "extractor_options" : {
+                                "logging" : {
+                                  "title" : "Options pertaining to logging.",
+                                  "description" : "Options pertaining to logging.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "verbosity" : {
+                                      "title" : "Python extractor logging verbosity level.",
+                                      "description" : "Controls the level of verbosity of the CodeQL Python extractor.\nThe supported levels are (in order of increasing verbosity):\n\n  - off\n  - errors\n  - warnings\n  - info or progress\n  - debug or progress+\n  - trace or progress++\n  - progress+++\n",
+                                      "type" : "string",
+                                      "pattern" : "^(off|errors|warnings|(info|progress)|(debug|progress\\+)|(trace|progress\\+\\+)|progress\\+\\+\\+)$"
+                                    }
+                                  }
+                                },
+                                "python_executable_name" : {
+                                  "title" : "Controls the name of the Python executable used by the Python extractor.",
+                                  "description" : "The Python extractor uses platform-dependent heuristics to determine the name of the Python executable to use. Specifying a value for this option overrides the name of the Python executable used by the extractor. Accepted values are py, python and python3. Use this setting with caution, the Python extractor requires Python 3 to run.\n",
+                                  "type" : "string",
+                                  "pattern" : "^(py|python|python3)$"
+                                }
+                              }
+                            }
+                          ],
+                          "ruby" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\ruby",
+                              "extractor_options" : {
+                                "trap" : {
+                                  "title" : "Options pertaining to TRAP.",
+                                  "description" : "Options pertaining to TRAP.",
+                                  "type" : "object",
+                                  "properties" : {
+                                    "compression" : {
+                                      "title" : "Controls compression for the TRAP files written by the extractor.",
+                                      "description" : "This option is only intended for use in debugging the extractor. Accepted values are 'gzip' (the default, to write gzip-compressed TRAP) and 'none' (to write uncompressed TRAP).\n",
+                                      "type" : "string",
+                                      "pattern" : "^(none|gzip)$"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          ],
+                          "swift" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\swift"
+                            }
+                          ],
+                          "xml" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\xml"
+                            }
+                          ],
+                          "yaml" : [
+                            {
+                              "extractor_root" : "C:\\codeql\\codeql\\yaml"
+                            }
+                          ]
+                        }
+                      }
+[2024-04-23 10:57:34] [PROGRESS] database init> Calculating baseline information in C:\upv\juice-shop\frontend
+[2024-04-23 10:57:34] [SPAMMY] database init> Ignoring the following directories when processing baseline information: .git, .hg, .svn.
+[2024-04-23 10:57:34] [DETAILS] database init> Running command in C:\upv\juice-shop\frontend: C:\codeql\codeql\tools\win64\scc.exe --by-file --exclude-dir .git,.hg,.svn --format json --no-large --no-min .
+[2024-04-23 10:57:37] Using configure-baseline script C:\codeql\codeql\javascript\tools\configure-baseline.cmd.
+[2024-04-23 10:57:37] [PROGRESS] database init> Running command in C:\upv\juice-shop\frontend: [C:\codeql\codeql\javascript\tools\configure-baseline.cmd]
+[2024-04-23 10:57:37] [SPAMMY] database init> Found 272 baseline files for javascript.
+[2024-04-23 10:57:37] [PROGRESS] database init> Calculated baseline information for languages: javascript (3.7s).
+[2024-04-23 10:57:37] [PROGRESS] database init> Resolving extractor javascript.
+[2024-04-23 10:57:37] [DETAILS] database init> Found candidate extractor root for javascript: C:\codeql\codeql\javascript.
+[2024-04-23 10:57:38] [PROGRESS] database init> Successfully loaded extractor JavaScript/TypeScript (javascript) from C:\codeql\codeql\javascript.
+[2024-04-23 10:57:38] [PROGRESS] database init> Created skeleton CodeQL database at C:\upv\juice-shop\frontend\db-javascript. This in-progress database is ready to be populated by an extractor.
+[2024-04-23 10:57:38] Plumbing command codeql database init completed.
+[2024-04-23 10:57:38] [PROGRESS] database create> Running build command: []
+[2024-04-23 10:57:38] Running plumbing command: codeql database trace-command --working-dir=C:\upv\juice-shop\frontend --index-traceless-dbs --no-db-cluster -- C:\upv\juice-shop\frontend\db-javascript
+[2024-04-23 10:57:38] Using autobuild script C:\codeql\codeql\javascript\tools\autobuild.cmd.
+[2024-04-23 10:57:38] [PROGRESS] database trace-command> Running command in C:\upv\juice-shop\frontend: [C:\codeql\codeql\javascript\tools\autobuild.cmd]
+[2024-04-23 10:57:38] [build-stdout] Single-threaded extraction.
+[2024-04-23 11:10:05] [build-stdout] package.json: Main file not found
+[2024-04-23 11:10:05] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\category-filter\category-filter.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\category-filter\category-filter.component.html (403 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\score-board-additional-settings-dialog\score-board-additional-settings-dialog.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\score-board-additional-settings-dialog\score-board-additional-settings-dialog.component.html (63 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenge-card\challenge-card.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenge-card\challenge-card.component.html (149 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenges-unavailable-warning\challenges-unavailable-warning.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenges-unavailable-warning\challenges-unavailable-warning.component.html (45 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\coding-challenge-progress-score-card\coding-challenge-progress-score-card.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\coding-challenge-progress-score-card\coding-challenge-progress-score-card.component.html (41 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-overview-score-card\difficulty-overview-score-card.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-overview-score-card\difficulty-overview-score-card.component.html (43 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-stars\difficulty-stars.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-stars\difficulty-stars.component.html (20 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\filter-settings.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\filter-settings.component.html (80 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\hacking-challenge-progress-score-card\hacking-challenge-progress-score-card.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\hacking-challenge-progress-score-card\hacking-challenge-progress-score-card.component.html (30 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\legacy-notice\legacy-notice.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\legacy-notice\legacy-notice.component.html (23 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\score-card\score-card.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\score-card\score-card.component.html (33 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\tutorial-mode-warning\tutorial-mode-warning.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\tutorial-mode-warning\tutorial-mode-warning.component.html (24 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\warning-card\warning-card.component.html
+[2024-04-23 11:10:06] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\warning-card\warning-card.component.html (20 ms)
+[2024-04-23 11:10:06] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\threejs-demo.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\threejs-demo.html (156 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\about\about.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\about\about.component.html (39 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\accounting\accounting.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\accounting\accounting.component.html (67 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address-create\address-create.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address-create\address-create.component.html (81 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address-select\address-select.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address-select\address-select.component.html (23 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address\address.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address\address.component.html (36 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\administration\administration.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\administration\administration.component.html (37 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\basket\basket.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\basket\basket.component.html (26 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\challenge-solved-notification\challenge-solved-notification.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\challenge-solved-notification\challenge-solved-notification.component.html (38 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\challenge-status-badge\challenge-status-badge.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\challenge-status-badge\challenge-status-badge.component.html (34 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\change-password\change-password.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\change-password\change-password.component.html (40 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\chatbot\chatbot.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\chatbot\chatbot.component.html (33 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-area\code-area.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-area\code-area.component.html (37 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-fixes\code-fixes.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-fixes\code-fixes.component.html (29 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-snippet\code-snippet.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-snippet\code-snippet.component.html (57 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\complaint\complaint.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\complaint\complaint.component.html (39 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\contact\contact.component.html
+[2024-04-23 11:10:07] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\contact\contact.component.html (41 ms)
+[2024-04-23 11:10:07] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\data-export\data-export.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\data-export\data-export.component.html (35 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\delivery-method\delivery-method.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\delivery-method\delivery-method.component.html (42 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\deluxe-user\deluxe-user.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\deluxe-user\deluxe-user.component.html (32 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\error-page\error-page.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\error-page\error-page.component.html (17 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\faucet\faucet.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\faucet\faucet.component.html (36 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\feedback-details\feedback-details.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\feedback-details\feedback-details.component.html (19 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\forgot-password\forgot-password.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\forgot-password\forgot-password.component.html (50 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\last-login-ip\last-login-ip.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\last-login-ip\last-login-ip.component.html (23 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\login\login.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\login\login.component.html (34 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\navbar\navbar.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\navbar\navbar.component.html (50 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\nft-unlock\nft-unlock.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\nft-unlock\nft-unlock.component.html (21 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\oauth\oauth.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\oauth\oauth.component.html (23 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-completion\order-completion.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-completion\order-completion.component.html (40 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-history\order-history.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-history\order-history.component.html (43 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-summary\order-summary.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-summary\order-summary.component.html (31 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\payment-method\payment-method.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\payment-method\payment-method.component.html (37 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\payment\payment.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\payment\payment.component.html (53 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\photo-wall\photo-wall.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\photo-wall\photo-wall.component.html (36 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\privacy-policy\privacy-policy.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\privacy-policy\privacy-policy.component.html (27 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\privacy-security\privacy-security.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\privacy-security\privacy-security.component.html (16 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\product-details\product-details.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\product-details\product-details.component.html (41 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\product-review-edit\product-review-edit.component.html
+[2024-04-23 11:10:08] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\product-review-edit\product-review-edit.component.html (19 ms)
+[2024-04-23 11:10:08] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\purchase-basket\purchase-basket.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\purchase-basket\purchase-basket.component.html (25 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\qr-code\qr-code.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\qr-code\qr-code.component.html (15 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\recycle\recycle.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\recycle\recycle.component.html (31 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\register\register.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\register\register.component.html (52 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\saved-address\saved-address.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\saved-address\saved-address.component.html (13 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\saved-payment-methods\saved-payment-methods.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\saved-payment-methods\saved-payment-methods.component.html (21 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board-legacy\score-board-legacy.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board-legacy\score-board-legacy.component.html (117 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.component.html (39 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\search-result\search-result.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\search-result\search-result.component.html (38 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\server-started-notification\server-started-notification.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\server-started-notification\server-started-notification.component.html (32 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\sidenav\sidenav.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\sidenav\sidenav.component.html (76 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\token-sale\token-sale.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\token-sale\token-sale.component.html (35 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\track-result\track-result.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\track-result\track-result.component.html (34 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth-enter\two-factor-auth-enter.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth-enter\two-factor-auth-enter.component.html (24 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth\two-factor-auth.component.html
+[2024-04-23 11:10:09] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth\two-factor-auth.component.html (27 ms)
+[2024-04-23 11:10:09] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\user-details\user-details.component.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\user-details\user-details.component.html (19 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\wallet-web3\wallet-web3.component.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\wallet-web3\wallet-web3.component.html (24 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\wallet\wallet.component.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\wallet\wallet.component.html (20 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\web3-sandbox\web3-sandbox.component.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\web3-sandbox\web3-sandbox.component.html (50 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\welcome-banner\welcome-banner.component.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\welcome-banner\welcome-banner.component.html (21 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\welcome\welcome.component.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\welcome\welcome.component.html (16 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\threejs-demo.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\threejs-demo.html (85 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\index.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\index.html (27 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\app.component.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\app.component.html (16 ms)
+[2024-04-23 11:10:10] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\index.html
+[2024-04-23 11:10:10] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\index.html (19 ms)
+[2024-04-23 11:10:10] [build-stdout] Found Node.js at: node
+[2024-04-23 11:10:10] [build-stdout] Found Node.js version: v20.11.1
+[2024-04-23 11:10:10] [build-stdout] Opening project C:\upv\juice-shop\frontend\tsconfig.json
+[2024-04-23 11:10:10] [build-stdout] Memory for TypeScript process: 2000 MB, and 400 MB reserve
+[2024-04-23 11:10:11] [build-stdout] Done opening project C:\upv\juice-shop\frontend\tsconfig.json (800 ms)
+[2024-04-23 11:10:12] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\category-filter\category-filter.component.spec.ts
+[2024-04-23 11:10:12] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\category-filter\category-filter.component.spec.ts (102 ms)
+[2024-04-23 11:10:12] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\category-filter\category-filter.component.ts
+[2024-04-23 11:10:12] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\category-filter\category-filter.component.ts (67 ms)
+[2024-04-23 11:10:12] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\score-board-additional-settings-dialog\score-board-additional-settings-dialog.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\score-board-additional-settings-dialog\score-board-additional-settings-dialog.component.spec.ts (53 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\score-board-additional-settings-dialog\score-board-additional-settings-dialog.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\components\score-board-additional-settings-dialog\score-board-additional-settings-dialog.component.ts (43 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\pipes\difficulty-selection-summary.pipe.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\pipes\difficulty-selection-summary.pipe.spec.ts (48 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\pipes\difficulty-selection-summary.pipe.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\pipes\difficulty-selection-summary.pipe.ts (60 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenge-card\challenge-card.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenge-card\challenge-card.component.spec.ts (59 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenge-card\challenge-card.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenge-card\challenge-card.component.ts (37 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenges-unavailable-warning\challenges-unavailable-warning.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenges-unavailable-warning\challenges-unavailable-warning.component.spec.ts (35 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenges-unavailable-warning\challenges-unavailable-warning.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\challenges-unavailable-warning\challenges-unavailable-warning.component.ts (48 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\coding-challenge-progress-score-card\coding-challenge-progress-score-card.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\coding-challenge-progress-score-card\coding-challenge-progress-score-card.component.spec.ts (37 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\coding-challenge-progress-score-card\coding-challenge-progress-score-card.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\coding-challenge-progress-score-card\coding-challenge-progress-score-card.component.ts (44 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-overview-score-card\difficulty-overview-score-card.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-overview-score-card\difficulty-overview-score-card.component.spec.ts (63 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-overview-score-card\difficulty-overview-score-card.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-overview-score-card\difficulty-overview-score-card.component.ts (76 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-stars\difficulty-stars.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\difficulty-stars\difficulty-stars.component.ts (25 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\filter-settings.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\filter-settings.component.spec.ts (42 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\filter-settings.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\filter-settings\filter-settings.component.ts (55 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\hacking-challenge-progress-score-card\hacking-challenge-progress-score-card.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\hacking-challenge-progress-score-card\hacking-challenge-progress-score-card.component.spec.ts (33 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\hacking-challenge-progress-score-card\hacking-challenge-progress-score-card.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\hacking-challenge-progress-score-card\hacking-challenge-progress-score-card.component.ts (40 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\legacy-notice\legacy-notice.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\legacy-notice\legacy-notice.component.ts (27 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\score-card\score-card.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\score-card\score-card.component.spec.ts (24 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\score-card\score-card.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\score-card\score-card.component.ts (28 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\tutorial-mode-warning\tutorial-mode-warning.component.spec.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\tutorial-mode-warning\tutorial-mode-warning.component.spec.ts (47 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\tutorial-mode-warning\tutorial-mode-warning.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\tutorial-mode-warning\tutorial-mode-warning.component.ts (31 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\components\warning-card\warning-card.component.ts
+[2024-04-23 11:10:13] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\components\warning-card\warning-card.component.ts (26 ms)
+[2024-04-23 11:10:13] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\public\ContractABIs.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\public\ContractABIs.ts (263 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\filter-settings\FilterSetting.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\filter-settings\FilterSetting.ts (30 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\filter-settings\query-params-converters.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\filter-settings\query-params-converters.ts (47 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\filter-settings\query-params-coverter.spec.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\filter-settings\query-params-coverter.spec.ts (34 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-filtering.spec.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-filtering.spec.ts (95 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-filtering.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-filtering.ts (50 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-sorting.spec.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-sorting.spec.ts (48 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-sorting.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\helpers\challenge-sorting.ts (27 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\pipes\challenge-hint.pipe.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\pipes\challenge-hint.pipe.ts (35 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\types\EnrichedChallenge.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\types\EnrichedChallenge.ts (22 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\about\about.component.spec.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\about\about.component.spec.ts (56 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\about\about.component.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\about\about.component.ts (59 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\accounting\accounting.component.spec.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\accounting\accounting.component.spec.ts (122 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\accounting\accounting.component.ts
+[2024-04-23 11:10:14] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\accounting\accounting.component.ts (79 ms)
+[2024-04-23 11:10:14] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address-create\address-create.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address-create\address-create.component.spec.ts (124 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address-create\address-create.component.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address-create\address-create.component.ts (82 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address-select\address-select.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address-select\address-select.component.spec.ts (48 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address-select\address-select.component.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address-select\address-select.component.ts (34 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address\address.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address\address.component.spec.ts (67 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\address\address.component.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\address\address.component.ts (69 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\administration\administration.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\administration\administration.component.spec.ts (80 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\administration\administration.component.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\administration\administration.component.ts (82 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\basket\basket.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\basket\basket.component.spec.ts (49 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\basket\basket.component.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\basket\basket.component.ts (38 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\challenge-solved-notification\challenge-solved-notification.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\challenge-solved-notification\challenge-solved-notification.component.spec.ts (76 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\challenge-solved-notification\challenge-solved-notification.component.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\challenge-solved-notification\challenge-solved-notification.component.ts (75 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\challenge-status-badge\challenge-status-badge.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\challenge-status-badge\challenge-status-badge.component.spec.ts (71 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\challenge-status-badge\challenge-status-badge.component.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\challenge-status-badge\challenge-status-badge.component.ts (44 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\change-password\change-password.component.spec.ts
+[2024-04-23 11:10:15] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\change-password\change-password.component.spec.ts (90 ms)
+[2024-04-23 11:10:15] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\change-password\change-password.component.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\change-password\change-password.component.ts (68 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\chatbot\chatbot.component.spec.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\chatbot\chatbot.component.spec.ts (54 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\chatbot\chatbot.component.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\chatbot\chatbot.component.ts (69 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-area\code-area.component.spec.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-area\code-area.component.spec.ts (46 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-area\code-area.component.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-area\code-area.component.ts (38 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-fixes\code-fixes.component.spec.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-fixes\code-fixes.component.spec.ts (43 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-fixes\code-fixes.component.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-fixes\code-fixes.component.ts (42 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-snippet\code-snippet.component.spec.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-snippet\code-snippet.component.spec.ts (124 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\code-snippet\code-snippet.component.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\code-snippet\code-snippet.component.ts (127 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\complaint\complaint.component.spec.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\complaint\complaint.component.spec.ts (81 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\complaint\complaint.component.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\complaint\complaint.component.ts (65 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\contact\contact.component.spec.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\contact\contact.component.spec.ts (100 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\contact\contact.component.ts
+[2024-04-23 11:10:16] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\contact\contact.component.ts (82 ms)
+[2024-04-23 11:10:16] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\data-export\data-export.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\data-export\data-export.component.spec.ts (74 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\data-export\data-export.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\data-export\data-export.component.ts (61 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\delivery-method\delivery-method.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\delivery-method\delivery-method.component.spec.ts (64 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\delivery-method\delivery-method.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\delivery-method\delivery-method.component.ts (46 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\deluxe-user\deluxe-user.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\deluxe-user\deluxe-user.component.spec.ts (65 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\deluxe-user\deluxe-user.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\deluxe-user\deluxe-user.component.ts (43 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\error-page\error-page.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\error-page\error-page.component.spec.ts (31 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\error-page\error-page.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\error-page\error-page.component.ts (33 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\faucet\faucet.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\faucet\faucet.component.ts (121 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\faucet\faucet.module.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\faucet\faucet.module.ts (43 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\feedback-details\feedback-details.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\feedback-details\feedback-details.component.spec.ts (34 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\feedback-details\feedback-details.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\feedback-details\feedback-details.component.ts (28 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\forgot-password\forgot-password.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\forgot-password\forgot-password.component.spec.ts (91 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\forgot-password\forgot-password.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\forgot-password\forgot-password.component.ts (63 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\last-login-ip\last-login-ip.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\last-login-ip\last-login-ip.component.spec.ts (37 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\last-login-ip\last-login-ip.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\last-login-ip\last-login-ip.component.ts (28 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\login\login.component.spec.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\login\login.component.spec.ts (87 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\login\login.component.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\login\login.component.ts (68 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Models\backup.model.ts
+[2024-04-23 11:10:17] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Models\backup.model.ts (27 ms)
+[2024-04-23 11:10:17] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Models\challenge.model.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Models\challenge.model.ts (25 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Models\deliveryMethod.model.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Models\deliveryMethod.model.ts (24 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Models\product.model.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Models\product.model.ts (20 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Models\review.model.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Models\review.model.ts (23 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Models\securityQuestion.model.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Models\securityQuestion.model.ts (21 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\navbar\navbar.component.spec.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\navbar\navbar.component.spec.ts (121 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\navbar\navbar.component.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\navbar\navbar.component.ts (112 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\nft-unlock\nft-unlock.component.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\nft-unlock\nft-unlock.component.ts (45 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\oauth\oauth.component.spec.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\oauth\oauth.component.spec.ts (61 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\oauth\oauth.component.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\oauth\oauth.component.ts (57 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-completion\order-completion.component.spec.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-completion\order-completion.component.spec.ts (98 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-completion\order-completion.component.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-completion\order-completion.component.ts (63 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-history\order-history.component.spec.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-history\order-history.component.spec.ts (67 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-history\order-history.component.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-history\order-history.component.ts (66 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-summary\order-summary.component.spec.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-summary\order-summary.component.spec.ts (77 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\order-summary\order-summary.component.ts
+[2024-04-23 11:10:18] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\order-summary\order-summary.component.ts (53 ms)
+[2024-04-23 11:10:18] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\payment-method\payment-method.component.spec.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\payment-method\payment-method.component.spec.ts (101 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\payment-method\payment-method.component.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\payment-method\payment-method.component.ts (72 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\payment\payment.component.spec.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\payment\payment.component.spec.ts (139 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\payment\payment.component.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\payment\payment.component.ts (132 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\photo-wall\mime-type.validator.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\photo-wall\mime-type.validator.ts (51 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\photo-wall\photo-wall.component.spec.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\photo-wall\photo-wall.component.spec.ts (77 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\photo-wall\photo-wall.component.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\photo-wall\photo-wall.component.ts (87 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\privacy-policy\privacy-policy.component.spec.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\privacy-policy\privacy-policy.component.spec.ts (47 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\privacy-policy\privacy-policy.component.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\privacy-policy\privacy-policy.component.ts (41 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\privacy-security\privacy-security.component.spec.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\privacy-security\privacy-security.component.spec.ts (40 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\privacy-security\privacy-security.component.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\privacy-security\privacy-security.component.ts (34 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\product-details\product-details.component.spec.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\product-details\product-details.component.spec.ts (111 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\product-details\product-details.component.ts
+[2024-04-23 11:10:19] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\product-details\product-details.component.ts (67 ms)
+[2024-04-23 11:10:19] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\product-review-edit\product-review-edit.component.spec.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\product-review-edit\product-review-edit.component.spec.ts (61 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\product-review-edit\product-review-edit.component.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\product-review-edit\product-review-edit.component.ts (42 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\purchase-basket\purchase-basket.component.spec.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\purchase-basket\purchase-basket.component.spec.ts (166 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\purchase-basket\purchase-basket.component.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\purchase-basket\purchase-basket.component.ts (75 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\qr-code\qr-code.component.spec.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\qr-code\qr-code.component.spec.ts (38 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\qr-code\qr-code.component.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\qr-code\qr-code.component.ts (67 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\recycle\recycle.component.spec.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\recycle\recycle.component.spec.ts (125 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\recycle\recycle.component.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\recycle\recycle.component.ts (76 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\register\register.component.spec.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\register\register.component.spec.ts (97 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\register\register.component.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\register\register.component.ts (62 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\saved-address\saved-address.component.spec.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\saved-address\saved-address.component.spec.ts (41 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\saved-address\saved-address.component.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\saved-address\saved-address.component.ts (24 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\saved-payment-methods\saved-payment-methods.component.spec.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\saved-payment-methods\saved-payment-methods.component.spec.ts (48 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\saved-payment-methods\saved-payment-methods.component.ts
+[2024-04-23 11:10:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\saved-payment-methods\saved-payment-methods.component.ts (25 ms)
+[2024-04-23 11:10:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board-legacy\score-board-legacy.component.spec.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board-legacy\score-board-legacy.component.spec.ts (238 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board-legacy\score-board-legacy.component.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board-legacy\score-board-legacy.component.ts (234 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.component.spec.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.component.spec.ts (67 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.component.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.component.ts (63 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.module.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\score-board\score-board.module.ts (47 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\search-result\search-result.component.spec.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\search-result\search-result.component.spec.ts (162 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\search-result\search-result.component.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\search-result\search-result.component.ts (117 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\server-started-notification\server-started-notification.component.spec.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\server-started-notification\server-started-notification.component.spec.ts (90 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\server-started-notification\server-started-notification.component.ts
+[2024-04-23 11:10:21] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\server-started-notification\server-started-notification.component.ts (44 ms)
+[2024-04-23 11:10:21] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\address.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\address.service.spec.ts (44 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\address.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\address.service.ts (39 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\administration.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\administration.service.spec.ts (31 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\administration.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\administration.service.ts (24 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\basket.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\basket.service.spec.ts (63 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\basket.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\basket.service.ts (43 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\captcha.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\captcha.service.spec.ts (26 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\captcha.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\captcha.service.ts (27 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\challenge.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\challenge.service.spec.ts (72 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\challenge.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\challenge.service.ts (49 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\chatbot.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\chatbot.service.spec.ts (39 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\chatbot.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\chatbot.service.ts (27 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\code-fixes.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\code-fixes.service.spec.ts (35 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\code-fixes.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\code-fixes.service.ts (26 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\code-snippet.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\code-snippet.service.spec.ts (34 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\code-snippet.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\code-snippet.service.ts (28 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\complaint.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\complaint.service.spec.ts (27 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\complaint.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\complaint.service.ts (25 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\configuration.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\configuration.service.spec.ts (43 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\configuration.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\configuration.service.ts (41 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\country-mapping.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\country-mapping.service.spec.ts (34 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\country-mapping.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\country-mapping.service.ts (27 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\data-subject.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\data-subject.service.spec.ts (32 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\data-subject.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\data-subject.service.ts (31 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\delivery.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\delivery.service.spec.ts (39 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\delivery.service.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\delivery.service.ts (27 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\feature-flag.service.spec.ts
+[2024-04-23 11:10:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\feature-flag.service.spec.ts (27 ms)
+[2024-04-23 11:10:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\feature-flag.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\feature-flag.service.ts (31 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\feedback.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\feedback.service.spec.ts (41 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\feedback.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\feedback.service.ts (33 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\form-submit.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\form-submit.service.spec.ts (26 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\form-submit.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\form-submit.service.ts (27 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\image-captcha.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\image-captcha.service.spec.ts (32 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\image-captcha.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\image-captcha.service.ts (23 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\keys.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\keys.service.ts (41 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\languages.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\languages.service.spec.ts (33 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\languages.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\languages.service.ts (32 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\local-backup.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\local-backup.service.spec.ts (58 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\local-backup.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\local-backup.service.ts (110 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\order-history.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\order-history.service.spec.ts (40 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\order-history.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\order-history.service.ts (39 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\payment.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\payment.service.spec.ts (49 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\payment.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\payment.service.ts (33 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\photo-wall.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\photo-wall.service.spec.ts (42 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\photo-wall.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\photo-wall.service.ts (31 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\product-review.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\product-review.service.spec.ts (45 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\product-review.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\product-review.service.ts (41 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\product.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\product.service.spec.ts (38 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\product.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\product.service.ts (40 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\quantity.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\quantity.service.spec.ts (40 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\quantity.service.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\quantity.service.ts (28 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\recycle.service.spec.ts
+[2024-04-23 11:10:23] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\recycle.service.spec.ts (38 ms)
+[2024-04-23 11:10:23] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\recycle.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\recycle.service.ts (33 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\request.interceptor.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\request.interceptor.ts (28 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\security-answer.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\security-answer.service.spec.ts (36 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\security-answer.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\security-answer.service.ts (28 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\security-question.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\security-question.service.spec.ts (40 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\security-question.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\security-question.service.ts (31 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\snack-bar-helper.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\snack-bar-helper.service.spec.ts (28 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\snack-bar-helper.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\snack-bar-helper.service.ts (27 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\socket-io.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\socket-io.service.spec.ts (25 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\socket-io.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\socket-io.service.ts (37 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\track-order.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\track-order.service.spec.ts (35 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\track-order.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\track-order.service.ts (30 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\two-factor-auth-service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\two-factor-auth-service.spec.ts (56 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\two-factor-auth-service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\two-factor-auth-service.ts (49 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\user.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\user.service.spec.ts (87 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\user.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\user.service.ts (54 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\vuln-lines.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\vuln-lines.service.spec.ts (27 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\vuln-lines.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\vuln-lines.service.ts (22 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\wallet.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\wallet.service.spec.ts (41 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\wallet.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\wallet.service.ts (24 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\window-ref.service.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\window-ref.service.spec.ts (25 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\Services\window-ref.service.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\Services\window-ref.service.ts (24 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\sidenav\sidenav.component.spec.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\sidenav\sidenav.component.spec.ts (91 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\sidenav\sidenav.component.ts
+[2024-04-23 11:10:24] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\sidenav\sidenav.component.ts (74 ms)
+[2024-04-23 11:10:24] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\token-sale\token-sale.component.spec.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\token-sale\token-sale.component.spec.ts (43 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\token-sale\token-sale.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\token-sale\token-sale.component.ts (34 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\track-result\track-result.component.spec.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\track-result\track-result.component.spec.ts (50 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\track-result\track-result.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\track-result\track-result.component.ts (51 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth-enter\two-factor-auth-enter.component.spec.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth-enter\two-factor-auth-enter.component.spec.ts (58 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth-enter\two-factor-auth-enter.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth-enter\two-factor-auth-enter.component.ts (42 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth\two-factor-auth.component.spec.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth\two-factor-auth.component.spec.ts (98 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth\two-factor-auth.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\two-factor-auth\two-factor-auth.component.ts (53 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\user-details\user-details.component.spec.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\user-details\user-details.component.spec.ts (47 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\user-details\user-details.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\user-details\user-details.component.ts (37 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\wallet-web3\wallet-web3.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\wallet-web3\wallet-web3.component.ts (82 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\wallet-web3\wallet-web3.module.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\wallet-web3\wallet-web3.module.ts (37 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\wallet\wallet.component.spec.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\wallet\wallet.component.spec.ts (59 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\wallet\wallet.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\wallet\wallet.component.ts (41 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\web3-sandbox\web3-sandbox.component.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\web3-sandbox\web3-sandbox.component.ts (131 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\web3-sandbox\web3-sandbox.module.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\web3-sandbox\web3-sandbox.module.ts (36 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\welcome-banner\welcome-banner.component.spec.ts
+[2024-04-23 11:10:25] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\welcome-banner\welcome-banner.component.spec.ts (54 ms)
+[2024-04-23 11:10:25] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\welcome-banner\welcome-banner.component.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\welcome-banner\welcome-banner.component.ts (97 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\welcome\welcome.component.spec.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\welcome\welcome.component.spec.ts (51 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\welcome\welcome.component.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\welcome\welcome.component.ts (37 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\public\ContractABIs.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\public\ContractABIs.ts (220 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\bonusPayload.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\bonusPayload.ts (36 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\codingChallenges.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\codingChallenges.ts (44 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\domXss.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\domXss.ts (52 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\forgedFeedback.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\forgedFeedback.ts (40 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\loginAdmin.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\loginAdmin.ts (57 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\loginBender.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\loginBender.ts (45 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\loginJim.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\loginJim.ts (42 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\passwordStrength.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\passwordStrength.ts (41 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\privacyPolicy.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\privacyPolicy.ts (31 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\scoreBoard.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\scoreBoard.ts (31 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\viewBasket.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\challenges\viewBasket.ts (38 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\helpers\helpers.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\helpers\helpers.ts (98 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\app.component.spec.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\app.component.spec.ts (45 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\app.component.ts
+[2024-04-23 11:10:26] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\app.component.ts (30 ms)
+[2024-04-23 11:10:26] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\app.guard.spec.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\app.guard.spec.ts (101 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\app.guard.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\app.guard.ts (73 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\app.module.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\app.module.ts (123 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\app.routing.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\app.routing.ts (102 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\app\roles.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\app\roles.ts (25 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\confetti\index.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\confetti\index.ts (33 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\environments\environment.prod.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\environments\environment.prod.ts (21 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\environments\environment.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\environments\environment.ts (21 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\index.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\index.ts (86 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\hacking-instructor\tutorialUnavailable.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\hacking-instructor\tutorialUnavailable.ts (31 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\main.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\main.ts (22 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\polyfills.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\polyfills.ts (42 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\test.ts
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\test.ts (20 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\CopyShader.js
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\CopyShader.js (26 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\EffectComposer.js
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\EffectComposer.js (63 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\MaskPass.js
+[2024-04-23 11:10:27] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\MaskPass.js (33 ms)
+[2024-04-23 11:10:27] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\OrbitControls.js
+[2024-04-23 11:10:28] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\OrbitControls.js (182 ms)
+[2024-04-23 11:10:28] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\RenderPass.js
+[2024-04-23 11:10:28] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\RenderPass.js (36 ms)
+[2024-04-23 11:10:28] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\ShaderPass.js
+[2024-04-23 11:10:28] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\ShaderPass.js (35 ms)
+[2024-04-23 11:10:28] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\three.js
+[2024-04-23 11:10:39] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\assets\private\three.js (11052 ms)
+[2024-04-23 11:10:39] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\CopyShader.js
+[2024-04-23 11:10:39] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\CopyShader.js (25 ms)
+[2024-04-23 11:10:39] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\EffectComposer.js
+[2024-04-23 11:10:39] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\EffectComposer.js (61 ms)
+[2024-04-23 11:10:39] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\MaskPass.js
+[2024-04-23 11:10:39] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\MaskPass.js (39 ms)
+[2024-04-23 11:10:39] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\OrbitControls.js
+[2024-04-23 11:10:39] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\OrbitControls.js (184 ms)
+[2024-04-23 11:10:39] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\RenderPass.js
+[2024-04-23 11:10:39] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\RenderPass.js (31 ms)
+[2024-04-23 11:10:39] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\ShaderPass.js
+[2024-04-23 11:10:39] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\ShaderPass.js (84 ms)
+[2024-04-23 11:10:39] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\assets\private\three.js
+[2024-04-23 11:10:50] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\assets\private\three.js (11079 ms)
+[2024-04-23 11:10:50] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\103.js
+[2024-04-23 11:10:50] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\103.js (306 ms)
+[2024-04-23 11:10:50] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\112.js
+[2024-04-23 11:10:51] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\112.js (561 ms)
+[2024-04-23 11:10:51] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\202.js
+[2024-04-23 11:11:02] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\202.js (11464 ms)
+[2024-04-23 11:11:02] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\472.js
+[2024-04-23 11:11:03] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\472.js (57 ms)
+[2024-04-23 11:11:03] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\535.js
+[2024-04-23 11:11:03] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\535.js (149 ms)
+[2024-04-23 11:11:03] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\613.js
+[2024-04-23 11:11:03] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\613.js (119 ms)
+[2024-04-23 11:11:03] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\67.js
+[2024-04-23 11:11:03] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\67.js (169 ms)
+[2024-04-23 11:11:03] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\745.js
+[2024-04-23 11:11:03] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\745.js (138 ms)
+[2024-04-23 11:11:03] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\859.js
+[2024-04-23 11:11:03] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\859.js (85 ms)
+[2024-04-23 11:11:03] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\98.js
+[2024-04-23 11:11:12] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\98.js (9052 ms)
+[2024-04-23 11:11:12] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\common.js
+[2024-04-23 11:11:12] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\common.js (141 ms)
+[2024-04-23 11:11:12] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\main.js
+[2024-04-23 11:11:20] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\main.js (8091 ms)
+[2024-04-23 11:11:20] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\polyfills.js
+[2024-04-23 11:11:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\polyfills.js (1321 ms)
+[2024-04-23 11:11:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\runtime.js
+[2024-04-23 11:11:22] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\runtime.js (107 ms)
+[2024-04-23 11:11:22] [build-stdout] Extracting C:\upv\juice-shop\frontend\dist\frontend\vendor.js
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\dist\frontend\vendor.js (23199 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\karma.conf.js
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\karma.conf.js (28 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\tsconfig.app.json
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\tsconfig.app.json (22 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\src\tsconfig.spec.json
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\src\tsconfig.spec.json (17 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\.eslintrc.js
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\.eslintrc.js (20 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\.stylelintrc.js
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\.stylelintrc.js (19 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\package.json
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\package.json (25 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\tsconfig.base.json
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\tsconfig.base.json (16 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\tsconfig.json
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\tsconfig.json (15 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\upv\juice-shop\frontend\webpack.angular.js
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\upv\juice-shop\frontend\webpack.angular.js (20 ms)
+[2024-04-23 11:11:45] [build-stderr] No externs trap cache found
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\es2016.js
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\es2016.js (41 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\es2017.js
+[2024-04-23 11:11:45] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\es2017.js (33 ms)
+[2024-04-23 11:11:45] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\es3.js
+[2024-04-23 11:11:46] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\es3.js (342 ms)
+[2024-04-23 11:11:46] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\es5.js
+[2024-04-23 11:11:46] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\es5.js (64 ms)
+[2024-04-23 11:11:46] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\es6.js
+[2024-04-23 11:11:46] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\es6.js (221 ms)
+[2024-04-23 11:11:46] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\es6_collections.js
+[2024-04-23 11:11:46] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\es6_collections.js (55 ms)
+[2024-04-23 11:11:46] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\intl.js
+[2024-04-23 11:11:46] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\intl.js (59 ms)
+[2024-04-23 11:11:46] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\es\proxy.js
+[2024-04-23 11:11:46] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\es\proxy.js (31 ms)
+[2024-04-23 11:11:46] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\lib\bdd.js
+[2024-04-23 11:11:46] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\lib\bdd.js (36 ms)
+[2024-04-23 11:11:46] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\lib\jquery-3.2.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\lib\jquery-3.2.js (501 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\lib\should.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\lib\should.js (74 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\lib\vows.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\lib\vows.js (69 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\assert.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\assert.js (50 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\assert_legacy.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\assert_legacy.js (27 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\buffer.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\buffer.js (51 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\child_process.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\child_process.js (172 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\cluster.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\cluster.js (217 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\console.js
+[2024-04-23 11:11:47] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\console.js (43 ms)
+[2024-04-23 11:11:47] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\constants.js
+[2024-04-23 11:11:48] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\constants.js (282 ms)
+[2024-04-23 11:11:48] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\crypto.js
+[2024-04-23 11:11:48] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\crypto.js (180 ms)
+[2024-04-23 11:11:48] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\dgram.js
+[2024-04-23 11:11:48] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\dgram.js (52 ms)
+[2024-04-23 11:11:48] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\dns.js
+[2024-04-23 11:11:48] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\dns.js (72 ms)
+[2024-04-23 11:11:48] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\domain.js
+[2024-04-23 11:11:48] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\domain.js (45 ms)
+[2024-04-23 11:11:48] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\events.js
+[2024-04-23 11:11:48] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\events.js (44 ms)
+[2024-04-23 11:11:48] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\fs.js
+[2024-04-23 11:11:48] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\fs.js (330 ms)
+[2024-04-23 11:11:48] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\globals.js
+[2024-04-23 11:11:49] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\globals.js (385 ms)
+[2024-04-23 11:11:49] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\http.js
+[2024-04-23 11:11:49] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\http.js (129 ms)
+[2024-04-23 11:11:49] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\https.js
+[2024-04-23 11:11:49] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\https.js (69 ms)
+[2024-04-23 11:11:49] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\module.js
+[2024-04-23 11:11:49] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\module.js (38 ms)
+[2024-04-23 11:11:49] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\net.js
+[2024-04-23 11:11:49] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\net.js (111 ms)
+[2024-04-23 11:11:49] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\os.js
+[2024-04-23 11:11:49] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\os.js (214 ms)
+[2024-04-23 11:11:49] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\path.js
+[2024-04-23 11:11:49] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\path.js (113 ms)
+[2024-04-23 11:11:49] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\process.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\process.js (40 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\punycode.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\punycode.js (50 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\querystring.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\querystring.js (49 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\readline.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\readline.js (71 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\repl.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\repl.js (53 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\stream.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\stream.js (166 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\string_decoder.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\string_decoder.js (37 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\sys.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\sys.js (29 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\timers.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\timers.js (46 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\tls.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\tls.js (108 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\tty.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\tty.js (42 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\url.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\url.js (40 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\util.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\util.js (72 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\v8.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\v8.js (38 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\vm.js
+[2024-04-23 11:11:50] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\vm.js (55 ms)
+[2024-04-23 11:11:50] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\zlib.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\nodejs\zlib.js (99 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\vm\jsshell.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\vm\jsshell.js (107 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\vm\rhino.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\vm\rhino.js (37 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\vm\spidermonkey.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\vm\spidermonkey.js (27 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\vm\v8.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\vm\v8.js (39 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\chrome.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\chrome.js (92 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\fetchapi.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\fetchapi.js (82 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\fileapi.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\fileapi.js (141 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\flash.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\flash.js (77 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_css.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_css.js (58 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_dom.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_dom.js (125 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_event.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_event.js (41 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_ext.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_ext.js (26 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_xml.js
+[2024-04-23 11:11:51] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\gecko_xml.js (31 ms)
+[2024-04-23 11:11:51] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\html5.js
+[2024-04-23 11:11:52] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\html5.js (622 ms)
+[2024-04-23 11:11:52] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_css.js
+[2024-04-23 11:11:52] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_css.js (61 ms)
+[2024-04-23 11:11:52] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_dom.js
+[2024-04-23 11:11:52] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_dom.js (178 ms)
+[2024-04-23 11:11:52] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_event.js
+[2024-04-23 11:11:52] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_event.js (72 ms)
+[2024-04-23 11:11:52] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_vml.js
+[2024-04-23 11:11:52] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\ie_vml.js (30 ms)
+[2024-04-23 11:11:52] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\intl.js
+[2024-04-23 11:11:52] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\intl.js (54 ms)
+[2024-04-23 11:11:52] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\iphone.js
+[2024-04-23 11:11:52] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\iphone.js (47 ms)
+[2024-04-23 11:11:52] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\mediasource.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\mediasource.js (53 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\page_visibility.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\page_visibility.js (36 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\streamsapi.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\streamsapi.js (88 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\url.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\url.js (47 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_anim_timing.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_anim_timing.js (39 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_batterystatus.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_batterystatus.js (34 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_css.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_css.js (286 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_css3d.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_css3d.js (47 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_device_sensor_event.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_device_sensor_event.js (37 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom1.js
+[2024-04-23 11:11:53] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom1.js (122 ms)
+[2024-04-23 11:11:53] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom2.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom2.js (275 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom3.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom3.js (126 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom4.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_dom4.js (36 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_elementtraversal.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_elementtraversal.js (35 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_encoding.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_encoding.js (32 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_event.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_event.js (95 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_event3.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_event3.js (33 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_gamepad.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_gamepad.js (38 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_geolocation.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_geolocation.js (41 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_indexeddb.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_indexeddb.js (98 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_midi.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_midi.js (47 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_navigation_timing.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_navigation_timing.js (58 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_permissions.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_permissions.js (28 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_pointer_events.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_pointer_events.js (36 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_range.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_range.js (37 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_requestidlecallback.js
+[2024-04-23 11:11:54] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_requestidlecallback.js (29 ms)
+[2024-04-23 11:11:54] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_rtc.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_rtc.js (241 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_screen_orientation.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_screen_orientation.js (32 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_selectors.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_selectors.js (31 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_serviceworker.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_serviceworker.js (87 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_touch_event.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_touch_event.js (43 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_webcrypto.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_webcrypto.js (65 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_xml.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\w3c_xml.js (73 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\webgl.js
+[2024-04-23 11:11:55] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\webgl.js (488 ms)
+[2024-04-23 11:11:55] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_css.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_css.js (165 ms)
+[2024-04-23 11:11:56] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_dom.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_dom.js (57 ms)
+[2024-04-23 11:11:56] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_event.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_event.js (24 ms)
+[2024-04-23 11:11:56] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_notifications.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_notifications.js (57 ms)
+[2024-04-23 11:11:56] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_usercontent.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\webkit_usercontent.js (31 ms)
+[2024-04-23 11:11:56] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\webstorage.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\webstorage.js (40 ms)
+[2024-04-23 11:11:56] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\whatwg_encoding.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\whatwg_encoding.js (34 ms)
+[2024-04-23 11:11:56] [build-stdout] Extracting C:\codeql\codeql\javascript\tools\data\externs\web\window.js
+[2024-04-23 11:11:56] [build-stdout] Done extracting C:\codeql\codeql\javascript\tools\data\externs\web\window.js (49 ms)
+[2024-04-23 11:11:56] Plumbing command codeql database trace-command completed.
+[2024-04-23 11:11:56] [PROGRESS] database create> Finalizing database at C:\upv\juice-shop\frontend\db-javascript.
+[2024-04-23 11:11:56] Running plumbing command: codeql database finalize --no-db-cluster -- C:\upv\juice-shop\frontend\db-javascript
+[2024-04-23 11:11:56] [PROGRESS] database finalize> Running TRAP import for CodeQL database at C:\upv\juice-shop\frontend\db-javascript...
+[2024-04-23 11:11:56] Running plumbing command: codeql dataset import --dbscheme=C:\codeql\codeql\javascript\semmlecode.javascript.dbscheme -- C:\upv\juice-shop\frontend\db-javascript\db-javascript C:\upv\juice-shop\frontend\db-javascript\trap\javascript
+[2024-04-23 11:11:57] Clearing disk cache since the version file C:\upv\juice-shop\frontend\db-javascript\db-javascript\default\cache\version does not exist
+[2024-04-23 11:11:57] Tuple pool not found. Clearing relations with cached strings
+[2024-04-23 11:11:57] Trimming disk cache at C:\upv\juice-shop\frontend\db-javascript\db-javascript\default\cache in mode clear.
+[2024-04-23 11:11:57] Sequence stamp origin is -6192790005189893314
+[2024-04-23 11:11:57] Pausing evaluation to hard-clear memory at sequence stamp o+0
+[2024-04-23 11:11:57] Unpausing evaluation
+[2024-04-23 11:11:57] Pausing evaluation to quickly trim disk at sequence stamp o+1
+[2024-04-23 11:11:57] Unpausing evaluation
+[2024-04-23 11:11:57] Pausing evaluation to zealously trim disk at sequence stamp o+2
+[2024-04-23 11:11:57] Unpausing evaluation
+[2024-04-23 11:11:57] Trimming completed (19ms): Purged everything.
+[2024-04-23 11:11:57] Scanning for files in C:\upv\juice-shop\frontend\db-javascript\trap\javascript
+[2024-04-23 11:11:57] Found 489 TRAP files (117.59 MiB)
+[2024-04-23 11:11:57] [PROGRESS] dataset import> Importing TRAP files
+[2024-04-23 11:11:58] Importing es2016.js.trap.gz (1 of 489)
+[2024-04-23 11:11:58] Importing es2017.js.trap.gz (2 of 489)
+[2024-04-23 11:11:58] Importing es3.js.trap.gz (3 of 489)
+[2024-04-23 11:11:58] Importing es5.js.trap.gz (4 of 489)
+[2024-04-23 11:11:58] Importing es6.js.trap.gz (5 of 489)
+[2024-04-23 11:11:58] Importing es6_collections.js.trap.gz (6 of 489)
+[2024-04-23 11:11:58] Importing intl.js.trap.gz (7 of 489)
+[2024-04-23 11:11:58] Importing proxy.js.trap.gz (8 of 489)
+[2024-04-23 11:11:58] Importing bdd.js.trap.gz (9 of 489)
+[2024-04-23 11:11:58] Importing jquery-3.2.js.trap.gz (10 of 489)
+[2024-04-23 11:11:59] Importing should.js.trap.gz (11 of 489)
+[2024-04-23 11:11:59] Importing vows.js.trap.gz (12 of 489)
+[2024-04-23 11:11:59] Importing assert.js.trap.gz (13 of 489)
+[2024-04-23 11:11:59] Importing assert_legacy.js.trap.gz (14 of 489)
+[2024-04-23 11:11:59] Importing buffer.js.trap.gz (15 of 489)
+[2024-04-23 11:11:59] Importing child_process.js.trap.gz (16 of 489)
+[2024-04-23 11:11:59] Importing cluster.js.trap.gz (17 of 489)
+[2024-04-23 11:11:59] Importing console.js.trap.gz (18 of 489)
+[2024-04-23 11:11:59] Importing constants.js.trap.gz (19 of 489)
+[2024-04-23 11:11:59] Importing crypto.js.trap.gz (20 of 489)
+[2024-04-23 11:11:59] Importing dgram.js.trap.gz (21 of 489)
+[2024-04-23 11:11:59] Importing dns.js.trap.gz (22 of 489)
+[2024-04-23 11:11:59] Importing domain.js.trap.gz (23 of 489)
+[2024-04-23 11:11:59] Importing events.js.trap.gz (24 of 489)
+[2024-04-23 11:11:59] Importing fs.js.trap.gz (25 of 489)
+[2024-04-23 11:12:00] Importing globals.js.trap.gz (26 of 489)
+[2024-04-23 11:12:00] Importing http.js.trap.gz (27 of 489)
+[2024-04-23 11:12:00] Importing https.js.trap.gz (28 of 489)
+[2024-04-23 11:12:00] Importing module.js.trap.gz (29 of 489)
+[2024-04-23 11:12:00] Importing net.js.trap.gz (30 of 489)
+[2024-04-23 11:12:00] Importing os.js.trap.gz (31 of 489)
+[2024-04-23 11:12:00] Importing path.js.trap.gz (32 of 489)
+[2024-04-23 11:12:00] Importing process.js.trap.gz (33 of 489)
+[2024-04-23 11:12:00] Importing punycode.js.trap.gz (34 of 489)
+[2024-04-23 11:12:00] Importing querystring.js.trap.gz (35 of 489)
+[2024-04-23 11:12:00] Importing readline.js.trap.gz (36 of 489)
+[2024-04-23 11:12:00] Importing repl.js.trap.gz (37 of 489)
+[2024-04-23 11:12:00] Importing stream.js.trap.gz (38 of 489)
+[2024-04-23 11:12:00] Importing string_decoder.js.trap.gz (39 of 489)
+[2024-04-23 11:12:00] Importing sys.js.trap.gz (40 of 489)
+[2024-04-23 11:12:00] Importing timers.js.trap.gz (41 of 489)
+[2024-04-23 11:12:00] Importing tls.js.trap.gz (42 of 489)
+[2024-04-23 11:12:00] Importing tty.js.trap.gz (43 of 489)
+[2024-04-23 11:12:00] Importing url.js.trap.gz (44 of 489)
+[2024-04-23 11:12:00] Importing util.js.trap.gz (45 of 489)
+[2024-04-23 11:12:00] Importing v8.js.trap.gz (46 of 489)
+[2024-04-23 11:12:00] Importing vm.js.trap.gz (47 of 489)
+[2024-04-23 11:12:00] Importing zlib.js.trap.gz (48 of 489)
+[2024-04-23 11:12:01] Importing jsshell.js.trap.gz (49 of 489)
+[2024-04-23 11:12:01] Importing rhino.js.trap.gz (50 of 489)
+[2024-04-23 11:12:01] Importing spidermonkey.js.trap.gz (51 of 489)
+[2024-04-23 11:12:01] Importing v8.js.trap.gz (52 of 489)
+[2024-04-23 11:12:01] Importing chrome.js.trap.gz (53 of 489)
+[2024-04-23 11:12:01] Importing fetchapi.js.trap.gz (54 of 489)
+[2024-04-23 11:12:01] Importing fileapi.js.trap.gz (55 of 489)
+[2024-04-23 11:12:01] Importing flash.js.trap.gz (56 of 489)
+[2024-04-23 11:12:01] Importing gecko_css.js.trap.gz (57 of 489)
+[2024-04-23 11:12:01] Importing gecko_dom.js.trap.gz (58 of 489)
+[2024-04-23 11:12:01] Importing gecko_event.js.trap.gz (59 of 489)
+[2024-04-23 11:12:01] Importing gecko_ext.js.trap.gz (60 of 489)
+[2024-04-23 11:12:01] Importing gecko_xml.js.trap.gz (61 of 489)
+[2024-04-23 11:12:01] Importing html5.js.trap.gz (62 of 489)
+[2024-04-23 11:12:01] Importing ie_css.js.trap.gz (63 of 489)
+[2024-04-23 11:12:01] Importing ie_dom.js.trap.gz (64 of 489)
+[2024-04-23 11:12:01] Importing ie_event.js.trap.gz (65 of 489)
+[2024-04-23 11:12:01] Importing ie_vml.js.trap.gz (66 of 489)
+[2024-04-23 11:12:01] Importing intl.js.trap.gz (67 of 489)
+[2024-04-23 11:12:01] Importing iphone.js.trap.gz (68 of 489)
+[2024-04-23 11:12:01] Importing mediasource.js.trap.gz (69 of 489)
+[2024-04-23 11:12:01] Importing page_visibility.js.trap.gz (70 of 489)
+[2024-04-23 11:12:01] Importing streamsapi.js.trap.gz (71 of 489)
+[2024-04-23 11:12:01] Importing url.js.trap.gz (72 of 489)
+[2024-04-23 11:12:01] Importing w3c_anim_timing.js.trap.gz (73 of 489)
+[2024-04-23 11:12:01] Importing w3c_batterystatus.js.trap.gz (74 of 489)
+[2024-04-23 11:12:01] Importing w3c_css.js.trap.gz (75 of 489)
+[2024-04-23 11:12:01] Importing w3c_css3d.js.trap.gz (76 of 489)
+[2024-04-23 11:12:01] Importing w3c_device_sensor_event.js.trap.gz (77 of 489)
+[2024-04-23 11:12:02] Importing w3c_dom1.js.trap.gz (78 of 489)
+[2024-04-23 11:12:02] Importing w3c_dom2.js.trap.gz (79 of 489)
+[2024-04-23 11:12:02] Importing w3c_dom3.js.trap.gz (80 of 489)
+[2024-04-23 11:12:02] Importing w3c_dom4.js.trap.gz (81 of 489)
+[2024-04-23 11:12:02] Importing w3c_elementtraversal.js.trap.gz (82 of 489)
+[2024-04-23 11:12:02] Importing w3c_encoding.js.trap.gz (83 of 489)
+[2024-04-23 11:12:02] Importing w3c_event.js.trap.gz (84 of 489)
+[2024-04-23 11:12:02] Importing w3c_event3.js.trap.gz (85 of 489)
+[2024-04-23 11:12:02] Importing w3c_gamepad.js.trap.gz (86 of 489)
+[2024-04-23 11:12:02] Importing w3c_geolocation.js.trap.gz (87 of 489)
+[2024-04-23 11:12:02] Importing w3c_indexeddb.js.trap.gz (88 of 489)
+[2024-04-23 11:12:02] Importing w3c_midi.js.trap.gz (89 of 489)
+[2024-04-23 11:12:02] Importing w3c_navigation_timing.js.trap.gz (90 of 489)
+[2024-04-23 11:12:02] Importing w3c_permissions.js.trap.gz (91 of 489)
+[2024-04-23 11:12:02] Importing w3c_pointer_events.js.trap.gz (92 of 489)
+[2024-04-23 11:12:02] Importing w3c_range.js.trap.gz (93 of 489)
+[2024-04-23 11:12:02] Importing w3c_requestidlecallback.js.trap.gz (94 of 489)
+[2024-04-23 11:12:02] Importing w3c_rtc.js.trap.gz (95 of 489)
+[2024-04-23 11:12:02] Importing w3c_screen_orientation.js.trap.gz (96 of 489)
+[2024-04-23 11:12:02] Importing w3c_selectors.js.trap.gz (97 of 489)
+[2024-04-23 11:12:02] Importing w3c_serviceworker.js.trap.gz (98 of 489)
+[2024-04-23 11:12:02] Importing w3c_touch_event.js.trap.gz (99 of 489)
+[2024-04-23 11:12:02] Importing w3c_webcrypto.js.trap.gz (100 of 489)
+[2024-04-23 11:12:02] Importing w3c_xml.js.trap.gz (101 of 489)
+[2024-04-23 11:12:02] Importing webgl.js.trap.gz (102 of 489)
+[2024-04-23 11:12:02] Importing webkit_css.js.trap.gz (103 of 489)
+[2024-04-23 11:12:03] Importing webkit_dom.js.trap.gz (104 of 489)
+[2024-04-23 11:12:03] Importing webkit_event.js.trap.gz (105 of 489)
+[2024-04-23 11:12:03] Importing webkit_notifications.js.trap.gz (106 of 489)
+[2024-04-23 11:12:03] Importing webkit_usercontent.js.trap.gz (107 of 489)
+[2024-04-23 11:12:03] Importing webstorage.js.trap.gz (108 of 489)
+[2024-04-23 11:12:03] Importing whatwg_encoding.js.trap.gz (109 of 489)
+[2024-04-23 11:12:03] Importing window.js.trap.gz (110 of 489)
+[2024-04-23 11:12:03] Importing .eslintrc.js.trap.gz (111 of 489)
+[2024-04-23 11:12:03] Importing .stylelintrc.js.trap.gz (112 of 489)
+[2024-04-23 11:12:03] Importing 103.js.trap.gz (113 of 489)
+[2024-04-23 11:12:03] Importing 112.js.trap.gz (114 of 489)
+[2024-04-23 11:12:03] Importing 202.js.trap.gz (115 of 489)
+[2024-04-23 11:12:09] Importing 472.js.trap.gz (116 of 489)
+[2024-04-23 11:12:09] Importing 535.js.trap.gz (117 of 489)
+[2024-04-23 11:12:09] Importing 613.js.trap.gz (118 of 489)
+[2024-04-23 11:12:09] Importing 67.js.trap.gz (119 of 489)
+[2024-04-23 11:12:09] Importing 745.js.trap.gz (120 of 489)
+[2024-04-23 11:12:09] Importing 859.js.trap.gz (121 of 489)
+[2024-04-23 11:12:09] Importing 98.js.trap.gz (122 of 489)
+[2024-04-23 11:12:14] Importing CopyShader.js.trap.gz (123 of 489)
+[2024-04-23 11:12:14] Importing EffectComposer.js.trap.gz (124 of 489)
+[2024-04-23 11:12:14] Importing MaskPass.js.trap.gz (125 of 489)
+[2024-04-23 11:12:14] Importing OrbitControls.js.trap.gz (126 of 489)
+[2024-04-23 11:12:14] Importing RenderPass.js.trap.gz (127 of 489)
+[2024-04-23 11:12:14] Importing ShaderPass.js.trap.gz (128 of 489)
+[2024-04-23 11:12:14] Importing three.js.trap.gz (129 of 489)
+[2024-04-23 11:12:19] Importing threejs-demo.html.trap.gz (130 of 489)
+[2024-04-23 11:12:19] Importing ContractABIs.ts.trap.gz (131 of 489)
+[2024-04-23 11:12:20] Importing common.js.trap.gz (132 of 489)
+[2024-04-23 11:12:20] Importing index.html.trap.gz (133 of 489)
+[2024-04-23 11:12:20] Importing main.js.trap.gz (134 of 489)
+[2024-04-23 11:12:24] Importing polyfills.js.trap.gz (135 of 489)
+[2024-04-23 11:12:24] Importing runtime.js.trap.gz (136 of 489)
+[2024-04-23 11:12:24] Importing vendor.js.trap.gz (137 of 489)
+[2024-04-23 11:12:39] Importing package.json.trap.gz (138 of 489)
+[2024-04-23 11:12:39] Importing backup.model.ts.trap.gz (139 of 489)
+[2024-04-23 11:12:39] Importing challenge.model.ts.trap.gz (140 of 489)
+[2024-04-23 11:12:39] Importing deliveryMethod.model.ts.trap.gz (141 of 489)
+[2024-04-23 11:12:39] Importing product.model.ts.trap.gz (142 of 489)
+[2024-04-23 11:12:39] Importing review.model.ts.trap.gz (143 of 489)
+[2024-04-23 11:12:39] Importing securityQuestion.model.ts.trap.gz (144 of 489)
+[2024-04-23 11:12:39] Importing address.service.spec.ts.trap.gz (145 of 489)
+[2024-04-23 11:12:39] Importing address.service.ts.trap.gz (146 of 489)
+[2024-04-23 11:12:39] Importing administration.service.spec.ts.trap.gz (147 of 489)
+[2024-04-23 11:12:39] Importing administration.service.ts.trap.gz (148 of 489)
+[2024-04-23 11:12:39] Importing basket.service.spec.ts.trap.gz (149 of 489)
+[2024-04-23 11:12:39] Importing basket.service.ts.trap.gz (150 of 489)
+[2024-04-23 11:12:39] Importing captcha.service.spec.ts.trap.gz (151 of 489)
+[2024-04-23 11:12:39] Importing captcha.service.ts.trap.gz (152 of 489)
+[2024-04-23 11:12:39] Importing challenge.service.spec.ts.trap.gz (153 of 489)
+[2024-04-23 11:12:39] Importing challenge.service.ts.trap.gz (154 of 489)
+[2024-04-23 11:12:39] Importing chatbot.service.spec.ts.trap.gz (155 of 489)
+[2024-04-23 11:12:39] Importing chatbot.service.ts.trap.gz (156 of 489)
+[2024-04-23 11:12:39] Importing code-fixes.service.spec.ts.trap.gz (157 of 489)
+[2024-04-23 11:12:39] Importing code-fixes.service.ts.trap.gz (158 of 489)
+[2024-04-23 11:12:39] Importing code-snippet.service.spec.ts.trap.gz (159 of 489)
+[2024-04-23 11:12:39] Importing code-snippet.service.ts.trap.gz (160 of 489)
+[2024-04-23 11:12:39] Importing complaint.service.spec.ts.trap.gz (161 of 489)
+[2024-04-23 11:12:39] Importing complaint.service.ts.trap.gz (162 of 489)
+[2024-04-23 11:12:39] Importing configuration.service.spec.ts.trap.gz (163 of 489)
+[2024-04-23 11:12:39] Importing configuration.service.ts.trap.gz (164 of 489)
+[2024-04-23 11:12:39] Importing country-mapping.service.spec.ts.trap.gz (165 of 489)
+[2024-04-23 11:12:39] Importing country-mapping.service.ts.trap.gz (166 of 489)
+[2024-04-23 11:12:39] Importing data-subject.service.spec.ts.trap.gz (167 of 489)
+[2024-04-23 11:12:39] Importing data-subject.service.ts.trap.gz (168 of 489)
+[2024-04-23 11:12:39] Importing delivery.service.spec.ts.trap.gz (169 of 489)
+[2024-04-23 11:12:39] Importing delivery.service.ts.trap.gz (170 of 489)
+[2024-04-23 11:12:39] Importing feature-flag.service.spec.ts.trap.gz (171 of 489)
+[2024-04-23 11:12:39] Importing feature-flag.service.ts.trap.gz (172 of 489)
+[2024-04-23 11:12:39] Importing feedback.service.spec.ts.trap.gz (173 of 489)
+[2024-04-23 11:12:39] Importing feedback.service.ts.trap.gz (174 of 489)
+[2024-04-23 11:12:39] Importing form-submit.service.spec.ts.trap.gz (175 of 489)
+[2024-04-23 11:12:39] Importing form-submit.service.ts.trap.gz (176 of 489)
+[2024-04-23 11:12:39] Importing image-captcha.service.spec.ts.trap.gz (177 of 489)
+[2024-04-23 11:12:39] Importing image-captcha.service.ts.trap.gz (178 of 489)
+[2024-04-23 11:12:39] Importing keys.service.ts.trap.gz (179 of 489)
+[2024-04-23 11:12:39] Importing languages.service.spec.ts.trap.gz (180 of 489)
+[2024-04-23 11:12:39] Importing languages.service.ts.trap.gz (181 of 489)
+[2024-04-23 11:12:39] Importing local-backup.service.spec.ts.trap.gz (182 of 489)
+[2024-04-23 11:12:39] Importing local-backup.service.ts.trap.gz (183 of 489)
+[2024-04-23 11:12:39] Importing order-history.service.spec.ts.trap.gz (184 of 489)
+[2024-04-23 11:12:39] Importing order-history.service.ts.trap.gz (185 of 489)
+[2024-04-23 11:12:39] Importing payment.service.spec.ts.trap.gz (186 of 489)
+[2024-04-23 11:12:39] Importing payment.service.ts.trap.gz (187 of 489)
+[2024-04-23 11:12:39] Importing photo-wall.service.spec.ts.trap.gz (188 of 489)
+[2024-04-23 11:12:39] Importing photo-wall.service.ts.trap.gz (189 of 489)
+[2024-04-23 11:12:39] Importing product-review.service.spec.ts.trap.gz (190 of 489)
+[2024-04-23 11:12:39] Importing product-review.service.ts.trap.gz (191 of 489)
+[2024-04-23 11:12:39] Importing product.service.spec.ts.trap.gz (192 of 489)
+[2024-04-23 11:12:39] Importing product.service.ts.trap.gz (193 of 489)
+[2024-04-23 11:12:39] Importing quantity.service.spec.ts.trap.gz (194 of 489)
+[2024-04-23 11:12:39] Importing quantity.service.ts.trap.gz (195 of 489)
+[2024-04-23 11:12:39] Importing recycle.service.spec.ts.trap.gz (196 of 489)
+[2024-04-23 11:12:39] Importing recycle.service.ts.trap.gz (197 of 489)
+[2024-04-23 11:12:39] Importing request.interceptor.ts.trap.gz (198 of 489)
+[2024-04-23 11:12:40] Importing security-answer.service.spec.ts.trap.gz (199 of 489)
+[2024-04-23 11:12:40] Importing security-answer.service.ts.trap.gz (200 of 489)
+[2024-04-23 11:12:40] Importing security-question.service.spec.ts.trap.gz (201 of 489)
+[2024-04-23 11:12:40] Importing security-question.service.ts.trap.gz (202 of 489)
+[2024-04-23 11:12:40] Importing snack-bar-helper.service.spec.ts.trap.gz (203 of 489)
+[2024-04-23 11:12:40] Importing snack-bar-helper.service.ts.trap.gz (204 of 489)
+[2024-04-23 11:12:40] Importing socket-io.service.spec.ts.trap.gz (205 of 489)
+[2024-04-23 11:12:40] Importing socket-io.service.ts.trap.gz (206 of 489)
+[2024-04-23 11:12:40] Importing track-order.service.spec.ts.trap.gz (207 of 489)
+[2024-04-23 11:12:40] Importing track-order.service.ts.trap.gz (208 of 489)
+[2024-04-23 11:12:40] Importing two-factor-auth-service.spec.ts.trap.gz (209 of 489)
+[2024-04-23 11:12:40] Importing two-factor-auth-service.ts.trap.gz (210 of 489)
+[2024-04-23 11:12:40] Importing user.service.spec.ts.trap.gz (211 of 489)
+[2024-04-23 11:12:40] Importing user.service.ts.trap.gz (212 of 489)
+[2024-04-23 11:12:40] Importing vuln-lines.service.spec.ts.trap.gz (213 of 489)
+[2024-04-23 11:12:40] Importing vuln-lines.service.ts.trap.gz (214 of 489)
+[2024-04-23 11:12:40] Importing wallet.service.spec.ts.trap.gz (215 of 489)
+[2024-04-23 11:12:40] Importing wallet.service.ts.trap.gz (216 of 489)
+[2024-04-23 11:12:40] Importing window-ref.service.spec.ts.trap.gz (217 of 489)
+[2024-04-23 11:12:40] Importing window-ref.service.ts.trap.gz (218 of 489)
+[2024-04-23 11:12:40] Importing about.component.html.trap.gz (219 of 489)
+[2024-04-23 11:12:40] Importing about.component.spec.ts.trap.gz (220 of 489)
+[2024-04-23 11:12:40] Importing about.component.ts.trap.gz (221 of 489)
+[2024-04-23 11:12:40] Importing accounting.component.html.trap.gz (222 of 489)
+[2024-04-23 11:12:40] Importing accounting.component.spec.ts.trap.gz (223 of 489)
+[2024-04-23 11:12:40] Importing accounting.component.ts.trap.gz (224 of 489)
+[2024-04-23 11:12:40] Importing address.component.html.trap.gz (225 of 489)
+[2024-04-23 11:12:40] Importing address.component.spec.ts.trap.gz (226 of 489)
+[2024-04-23 11:12:40] Importing address.component.ts.trap.gz (227 of 489)
+[2024-04-23 11:12:40] Importing address-create.component.html.trap.gz (228 of 489)
+[2024-04-23 11:12:40] Importing address-create.component.spec.ts.trap.gz (229 of 489)
+[2024-04-23 11:12:40] Importing address-create.component.ts.trap.gz (230 of 489)
+[2024-04-23 11:12:40] Importing address-select.component.html.trap.gz (231 of 489)
+[2024-04-23 11:12:40] Importing address-select.component.spec.ts.trap.gz (232 of 489)
+[2024-04-23 11:12:40] Importing address-select.component.ts.trap.gz (233 of 489)
+[2024-04-23 11:12:40] Importing administration.component.html.trap.gz (234 of 489)
+[2024-04-23 11:12:40] Importing administration.component.spec.ts.trap.gz (235 of 489)
+[2024-04-23 11:12:40] Importing administration.component.ts.trap.gz (236 of 489)
+[2024-04-23 11:12:40] Importing app.component.html.trap.gz (237 of 489)
+[2024-04-23 11:12:40] Importing app.component.spec.ts.trap.gz (238 of 489)
+[2024-04-23 11:12:40] Importing app.component.ts.trap.gz (239 of 489)
+[2024-04-23 11:12:40] Importing app.guard.spec.ts.trap.gz (240 of 489)
+[2024-04-23 11:12:40] Importing app.guard.ts.trap.gz (241 of 489)
+[2024-04-23 11:12:40] Importing app.module.ts.trap.gz (242 of 489)
+[2024-04-23 11:12:40] Importing app.routing.ts.trap.gz (243 of 489)
+[2024-04-23 11:12:40] Importing basket.component.html.trap.gz (244 of 489)
+[2024-04-23 11:12:40] Importing basket.component.spec.ts.trap.gz (245 of 489)
+[2024-04-23 11:12:40] Importing basket.component.ts.trap.gz (246 of 489)
+[2024-04-23 11:12:40] Importing challenge-solved-notification.component.html.trap.gz (247 of 489)
+[2024-04-23 11:12:40] Importing challenge-solved-notification.component.spec.ts.trap.gz (248 of 489)
+[2024-04-23 11:12:40] Importing challenge-solved-notification.component.ts.trap.gz (249 of 489)
+[2024-04-23 11:12:40] Importing challenge-status-badge.component.html.trap.gz (250 of 489)
+[2024-04-23 11:12:40] Importing challenge-status-badge.component.spec.ts.trap.gz (251 of 489)
+[2024-04-23 11:12:41] Importing challenge-status-badge.component.ts.trap.gz (252 of 489)
+[2024-04-23 11:12:41] Importing change-password.component.html.trap.gz (253 of 489)
+[2024-04-23 11:12:41] Importing change-password.component.spec.ts.trap.gz (254 of 489)
+[2024-04-23 11:12:41] Importing change-password.component.ts.trap.gz (255 of 489)
+[2024-04-23 11:12:41] Importing chatbot.component.html.trap.gz (256 of 489)
+[2024-04-23 11:12:41] Importing chatbot.component.spec.ts.trap.gz (257 of 489)
+[2024-04-23 11:12:41] Importing chatbot.component.ts.trap.gz (258 of 489)
+[2024-04-23 11:12:41] Importing code-area.component.html.trap.gz (259 of 489)
+[2024-04-23 11:12:41] Importing code-area.component.spec.ts.trap.gz (260 of 489)
+[2024-04-23 11:12:41] Importing code-area.component.ts.trap.gz (261 of 489)
+[2024-04-23 11:12:41] Importing code-fixes.component.html.trap.gz (262 of 489)
+[2024-04-23 11:12:41] Importing code-fixes.component.spec.ts.trap.gz (263 of 489)
+[2024-04-23 11:12:41] Importing code-fixes.component.ts.trap.gz (264 of 489)
+[2024-04-23 11:12:41] Importing code-snippet.component.html.trap.gz (265 of 489)
+[2024-04-23 11:12:41] Importing code-snippet.component.spec.ts.trap.gz (266 of 489)
+[2024-04-23 11:12:41] Importing code-snippet.component.ts.trap.gz (267 of 489)
+[2024-04-23 11:12:41] Importing complaint.component.html.trap.gz (268 of 489)
+[2024-04-23 11:12:41] Importing complaint.component.spec.ts.trap.gz (269 of 489)
+[2024-04-23 11:12:41] Importing complaint.component.ts.trap.gz (270 of 489)
+[2024-04-23 11:12:41] Importing contact.component.html.trap.gz (271 of 489)
+[2024-04-23 11:12:41] Importing contact.component.spec.ts.trap.gz (272 of 489)
+[2024-04-23 11:12:41] Importing contact.component.ts.trap.gz (273 of 489)
+[2024-04-23 11:12:41] Importing data-export.component.html.trap.gz (274 of 489)
+[2024-04-23 11:12:41] Importing data-export.component.spec.ts.trap.gz (275 of 489)
+[2024-04-23 11:12:41] Importing data-export.component.ts.trap.gz (276 of 489)
+[2024-04-23 11:12:41] Importing delivery-method.component.html.trap.gz (277 of 489)
+[2024-04-23 11:12:41] Importing delivery-method.component.spec.ts.trap.gz (278 of 489)
+[2024-04-23 11:12:41] Importing delivery-method.component.ts.trap.gz (279 of 489)
+[2024-04-23 11:12:41] Importing deluxe-user.component.html.trap.gz (280 of 489)
+[2024-04-23 11:12:41] Importing deluxe-user.component.spec.ts.trap.gz (281 of 489)
+[2024-04-23 11:12:41] Importing deluxe-user.component.ts.trap.gz (282 of 489)
+[2024-04-23 11:12:41] Importing error-page.component.html.trap.gz (283 of 489)
+[2024-04-23 11:12:41] Importing error-page.component.spec.ts.trap.gz (284 of 489)
+[2024-04-23 11:12:41] Importing error-page.component.ts.trap.gz (285 of 489)
+[2024-04-23 11:12:41] Importing faucet.component.html.trap.gz (286 of 489)
+[2024-04-23 11:12:41] Importing faucet.component.ts.trap.gz (287 of 489)
+[2024-04-23 11:12:41] Importing faucet.module.ts.trap.gz (288 of 489)
+[2024-04-23 11:12:41] Importing feedback-details.component.html.trap.gz (289 of 489)
+[2024-04-23 11:12:41] Importing feedback-details.component.spec.ts.trap.gz (290 of 489)
+[2024-04-23 11:12:41] Importing feedback-details.component.ts.trap.gz (291 of 489)
+[2024-04-23 11:12:41] Importing forgot-password.component.html.trap.gz (292 of 489)
+[2024-04-23 11:12:41] Importing forgot-password.component.spec.ts.trap.gz (293 of 489)
+[2024-04-23 11:12:41] Importing forgot-password.component.ts.trap.gz (294 of 489)
+[2024-04-23 11:12:41] Importing last-login-ip.component.html.trap.gz (295 of 489)
+[2024-04-23 11:12:41] Importing last-login-ip.component.spec.ts.trap.gz (296 of 489)
+[2024-04-23 11:12:41] Importing last-login-ip.component.ts.trap.gz (297 of 489)
+[2024-04-23 11:12:41] Importing login.component.html.trap.gz (298 of 489)
+[2024-04-23 11:12:41] Importing login.component.spec.ts.trap.gz (299 of 489)
+[2024-04-23 11:12:41] Importing login.component.ts.trap.gz (300 of 489)
+[2024-04-23 11:12:41] Importing navbar.component.html.trap.gz (301 of 489)
+[2024-04-23 11:12:41] Importing navbar.component.spec.ts.trap.gz (302 of 489)
+[2024-04-23 11:12:42] Importing navbar.component.ts.trap.gz (303 of 489)
+[2024-04-23 11:12:42] Importing nft-unlock.component.html.trap.gz (304 of 489)
+[2024-04-23 11:12:42] Importing nft-unlock.component.ts.trap.gz (305 of 489)
+[2024-04-23 11:12:42] Importing oauth.component.html.trap.gz (306 of 489)
+[2024-04-23 11:12:42] Importing oauth.component.spec.ts.trap.gz (307 of 489)
+[2024-04-23 11:12:42] Importing oauth.component.ts.trap.gz (308 of 489)
+[2024-04-23 11:12:42] Importing order-completion.component.html.trap.gz (309 of 489)
+[2024-04-23 11:12:42] Importing order-completion.component.spec.ts.trap.gz (310 of 489)
+[2024-04-23 11:12:42] Importing order-completion.component.ts.trap.gz (311 of 489)
+[2024-04-23 11:12:42] Importing order-history.component.html.trap.gz (312 of 489)
+[2024-04-23 11:12:42] Importing order-history.component.spec.ts.trap.gz (313 of 489)
+[2024-04-23 11:12:42] Importing order-history.component.ts.trap.gz (314 of 489)
+[2024-04-23 11:12:42] Importing order-summary.component.html.trap.gz (315 of 489)
+[2024-04-23 11:12:42] Importing order-summary.component.spec.ts.trap.gz (316 of 489)
+[2024-04-23 11:12:42] Importing order-summary.component.ts.trap.gz (317 of 489)
+[2024-04-23 11:12:42] Importing payment.component.html.trap.gz (318 of 489)
+[2024-04-23 11:12:42] Importing payment.component.spec.ts.trap.gz (319 of 489)
+[2024-04-23 11:12:42] Importing payment.component.ts.trap.gz (320 of 489)
+[2024-04-23 11:12:42] Importing payment-method.component.html.trap.gz (321 of 489)
+[2024-04-23 11:12:42] Importing payment-method.component.spec.ts.trap.gz (322 of 489)
+[2024-04-23 11:12:42] Importing payment-method.component.ts.trap.gz (323 of 489)
+[2024-04-23 11:12:42] Importing mime-type.validator.ts.trap.gz (324 of 489)
+[2024-04-23 11:12:42] Importing photo-wall.component.html.trap.gz (325 of 489)
+[2024-04-23 11:12:42] Importing photo-wall.component.spec.ts.trap.gz (326 of 489)
+[2024-04-23 11:12:42] Importing photo-wall.component.ts.trap.gz (327 of 489)
+[2024-04-23 11:12:42] Importing privacy-policy.component.html.trap.gz (328 of 489)
+[2024-04-23 11:12:42] Importing privacy-policy.component.spec.ts.trap.gz (329 of 489)
+[2024-04-23 11:12:42] Importing privacy-policy.component.ts.trap.gz (330 of 489)
+[2024-04-23 11:12:42] Importing privacy-security.component.html.trap.gz (331 of 489)
+[2024-04-23 11:12:42] Importing privacy-security.component.spec.ts.trap.gz (332 of 489)
+[2024-04-23 11:12:42] Importing privacy-security.component.ts.trap.gz (333 of 489)
+[2024-04-23 11:12:42] Importing product-details.component.html.trap.gz (334 of 489)
+[2024-04-23 11:12:42] Importing product-details.component.spec.ts.trap.gz (335 of 489)
+[2024-04-23 11:12:42] Importing product-details.component.ts.trap.gz (336 of 489)
+[2024-04-23 11:12:42] Importing product-review-edit.component.html.trap.gz (337 of 489)
+[2024-04-23 11:12:42] Importing product-review-edit.component.spec.ts.trap.gz (338 of 489)
+[2024-04-23 11:12:42] Importing product-review-edit.component.ts.trap.gz (339 of 489)
+[2024-04-23 11:12:42] Importing purchase-basket.component.html.trap.gz (340 of 489)
+[2024-04-23 11:12:42] Importing purchase-basket.component.spec.ts.trap.gz (341 of 489)
+[2024-04-23 11:12:42] Importing purchase-basket.component.ts.trap.gz (342 of 489)
+[2024-04-23 11:12:42] Importing qr-code.component.html.trap.gz (343 of 489)
+[2024-04-23 11:12:42] Importing qr-code.component.spec.ts.trap.gz (344 of 489)
+[2024-04-23 11:12:42] Importing qr-code.component.ts.trap.gz (345 of 489)
+[2024-04-23 11:12:42] Importing recycle.component.html.trap.gz (346 of 489)
+[2024-04-23 11:12:42] Importing recycle.component.spec.ts.trap.gz (347 of 489)
+[2024-04-23 11:12:42] Importing recycle.component.ts.trap.gz (348 of 489)
+[2024-04-23 11:12:42] Importing register.component.html.trap.gz (349 of 489)
+[2024-04-23 11:12:42] Importing register.component.spec.ts.trap.gz (350 of 489)
+[2024-04-23 11:12:43] Importing register.component.ts.trap.gz (351 of 489)
+[2024-04-23 11:12:43] Importing roles.ts.trap.gz (352 of 489)
+[2024-04-23 11:12:43] Importing saved-address.component.html.trap.gz (353 of 489)
+[2024-04-23 11:12:43] Importing saved-address.component.spec.ts.trap.gz (354 of 489)
+[2024-04-23 11:12:43] Importing saved-address.component.ts.trap.gz (355 of 489)
+[2024-04-23 11:12:43] Importing saved-payment-methods.component.html.trap.gz (356 of 489)
+[2024-04-23 11:12:43] Importing saved-payment-methods.component.spec.ts.trap.gz (357 of 489)
+[2024-04-23 11:12:43] Importing saved-payment-methods.component.ts.trap.gz (358 of 489)
+[2024-04-23 11:12:43] Importing challenge-card.component.html.trap.gz (359 of 489)
+[2024-04-23 11:12:43] Importing challenge-card.component.spec.ts.trap.gz (360 of 489)
+[2024-04-23 11:12:43] Importing challenge-card.component.ts.trap.gz (361 of 489)
+[2024-04-23 11:12:43] Importing challenges-unavailable-warning.component.html.trap.gz (362 of 489)
+[2024-04-23 11:12:43] Importing challenges-unavailable-warning.component.spec.ts.trap.gz (363 of 489)
+[2024-04-23 11:12:43] Importing challenges-unavailable-warning.component.ts.trap.gz (364 of 489)
+[2024-04-23 11:12:43] Importing coding-challenge-progress-score-card.component.html.trap.gz (365 of 489)
+[2024-04-23 11:12:43] Importing coding-challenge-progress-score-card.component.spec.ts.trap.gz (366 of 489)
+[2024-04-23 11:12:43] Importing coding-challenge-progress-score-card.component.ts.trap.gz (367 of 489)
+[2024-04-23 11:12:43] Importing difficulty-overview-score-card.component.html.trap.gz (368 of 489)
+[2024-04-23 11:12:43] Importing difficulty-overview-score-card.component.spec.ts.trap.gz (369 of 489)
+[2024-04-23 11:12:43] Importing difficulty-overview-score-card.component.ts.trap.gz (370 of 489)
+[2024-04-23 11:12:43] Importing difficulty-stars.component.html.trap.gz (371 of 489)
+[2024-04-23 11:12:43] Importing difficulty-stars.component.ts.trap.gz (372 of 489)
+[2024-04-23 11:12:43] Importing category-filter.component.html.trap.gz (373 of 489)
+[2024-04-23 11:12:43] Importing category-filter.component.spec.ts.trap.gz (374 of 489)
+[2024-04-23 11:12:43] Importing category-filter.component.ts.trap.gz (375 of 489)
+[2024-04-23 11:12:43] Importing score-board-additional-settings-dialog.component.html.trap.gz (376 of 489)
+[2024-04-23 11:12:43] Importing score-board-additional-settings-dialog.component.spec.ts.trap.gz (377 of 489)
+[2024-04-23 11:12:43] Importing score-board-additional-settings-dialog.component.ts.trap.gz (378 of 489)
+[2024-04-23 11:12:43] Importing filter-settings.component.html.trap.gz (379 of 489)
+[2024-04-23 11:12:43] Importing filter-settings.component.spec.ts.trap.gz (380 of 489)
+[2024-04-23 11:12:43] Importing filter-settings.component.ts.trap.gz (381 of 489)
+[2024-04-23 11:12:43] Importing difficulty-selection-summary.pipe.spec.ts.trap.gz (382 of 489)
+[2024-04-23 11:12:43] Importing difficulty-selection-summary.pipe.ts.trap.gz (383 of 489)
+[2024-04-23 11:12:43] Importing hacking-challenge-progress-score-card.component.html.trap.gz (384 of 489)
+[2024-04-23 11:12:43] Importing hacking-challenge-progress-score-card.component.spec.ts.trap.gz (385 of 489)
+[2024-04-23 11:12:43] Importing hacking-challenge-progress-score-card.component.ts.trap.gz (386 of 489)
+[2024-04-23 11:12:43] Importing legacy-notice.component.html.trap.gz (387 of 489)
+[2024-04-23 11:12:43] Importing legacy-notice.component.ts.trap.gz (388 of 489)
+[2024-04-23 11:12:43] Importing score-card.component.html.trap.gz (389 of 489)
+[2024-04-23 11:12:43] Importing score-card.component.spec.ts.trap.gz (390 of 489)
+[2024-04-23 11:12:43] Importing score-card.component.ts.trap.gz (391 of 489)
+[2024-04-23 11:12:43] Importing tutorial-mode-warning.component.html.trap.gz (392 of 489)
+[2024-04-23 11:12:43] Importing tutorial-mode-warning.component.spec.ts.trap.gz (393 of 489)
+[2024-04-23 11:12:43] Importing tutorial-mode-warning.component.ts.trap.gz (394 of 489)
+[2024-04-23 11:12:43] Importing warning-card.component.html.trap.gz (395 of 489)
+[2024-04-23 11:12:43] Importing warning-card.component.ts.trap.gz (396 of 489)
+[2024-04-23 11:12:43] Importing FilterSetting.ts.trap.gz (397 of 489)
+[2024-04-23 11:12:43] Importing query-params-converters.ts.trap.gz (398 of 489)
+[2024-04-23 11:12:43] Importing query-params-coverter.spec.ts.trap.gz (399 of 489)
+[2024-04-23 11:12:43] Importing challenge-filtering.spec.ts.trap.gz (400 of 489)
+[2024-04-23 11:12:43] Importing challenge-filtering.ts.trap.gz (401 of 489)
+[2024-04-23 11:12:43] Importing challenge-sorting.spec.ts.trap.gz (402 of 489)
+[2024-04-23 11:12:43] Importing challenge-sorting.ts.trap.gz (403 of 489)
+[2024-04-23 11:12:43] Importing challenge-hint.pipe.ts.trap.gz (404 of 489)
+[2024-04-23 11:12:43] Importing score-board.component.html.trap.gz (405 of 489)
+[2024-04-23 11:12:43] Importing score-board.component.spec.ts.trap.gz (406 of 489)
+[2024-04-23 11:12:43] Importing score-board.component.ts.trap.gz (407 of 489)
+[2024-04-23 11:12:43] Importing score-board.module.ts.trap.gz (408 of 489)
+[2024-04-23 11:12:43] Importing EnrichedChallenge.ts.trap.gz (409 of 489)
+[2024-04-23 11:12:43] Importing score-board-legacy.component.html.trap.gz (410 of 489)
+[2024-04-23 11:12:43] Importing score-board-legacy.component.spec.ts.trap.gz (411 of 489)
+[2024-04-23 11:12:43] Importing score-board-legacy.component.ts.trap.gz (412 of 489)
+[2024-04-23 11:12:43] Importing search-result.component.html.trap.gz (413 of 489)
+[2024-04-23 11:12:43] Importing search-result.component.spec.ts.trap.gz (414 of 489)
+[2024-04-23 11:12:43] Importing search-result.component.ts.trap.gz (415 of 489)
+[2024-04-23 11:12:43] Importing server-started-notification.component.html.trap.gz (416 of 489)
+[2024-04-23 11:12:43] Importing server-started-notification.component.spec.ts.trap.gz (417 of 489)
+[2024-04-23 11:12:44] Importing server-started-notification.component.ts.trap.gz (418 of 489)
+[2024-04-23 11:12:44] Importing sidenav.component.html.trap.gz (419 of 489)
+[2024-04-23 11:12:44] Importing sidenav.component.spec.ts.trap.gz (420 of 489)
+[2024-04-23 11:12:44] Importing sidenav.component.ts.trap.gz (421 of 489)
+[2024-04-23 11:12:44] Importing token-sale.component.html.trap.gz (422 of 489)
+[2024-04-23 11:12:44] Importing token-sale.component.spec.ts.trap.gz (423 of 489)
+[2024-04-23 11:12:44] Importing token-sale.component.ts.trap.gz (424 of 489)
+[2024-04-23 11:12:44] Importing track-result.component.html.trap.gz (425 of 489)
+[2024-04-23 11:12:44] Importing track-result.component.spec.ts.trap.gz (426 of 489)
+[2024-04-23 11:12:44] Importing track-result.component.ts.trap.gz (427 of 489)
+[2024-04-23 11:12:44] Importing two-factor-auth.component.html.trap.gz (428 of 489)
+[2024-04-23 11:12:44] Importing two-factor-auth.component.spec.ts.trap.gz (429 of 489)
+[2024-04-23 11:12:44] Importing two-factor-auth.component.ts.trap.gz (430 of 489)
+[2024-04-23 11:12:44] Importing two-factor-auth-enter.component.html.trap.gz (431 of 489)
+[2024-04-23 11:12:44] Importing two-factor-auth-enter.component.spec.ts.trap.gz (432 of 489)
+[2024-04-23 11:12:44] Importing two-factor-auth-enter.component.ts.trap.gz (433 of 489)
+[2024-04-23 11:12:44] Importing user-details.component.html.trap.gz (434 of 489)
+[2024-04-23 11:12:44] Importing user-details.component.spec.ts.trap.gz (435 of 489)
+[2024-04-23 11:12:44] Importing user-details.component.ts.trap.gz (436 of 489)
+[2024-04-23 11:12:44] Importing wallet.component.html.trap.gz (437 of 489)
+[2024-04-23 11:12:44] Importing wallet.component.spec.ts.trap.gz (438 of 489)
+[2024-04-23 11:12:44] Importing wallet.component.ts.trap.gz (439 of 489)
+[2024-04-23 11:12:44] Importing wallet-web3.component.html.trap.gz (440 of 489)
+[2024-04-23 11:12:44] Importing wallet-web3.component.ts.trap.gz (441 of 489)
+[2024-04-23 11:12:44] Importing wallet-web3.module.ts.trap.gz (442 of 489)
+[2024-04-23 11:12:44] Importing web3-sandbox.component.html.trap.gz (443 of 489)
+[2024-04-23 11:12:44] Importing web3-sandbox.component.ts.trap.gz (444 of 489)
+[2024-04-23 11:12:44] Importing web3-sandbox.module.ts.trap.gz (445 of 489)
+[2024-04-23 11:12:44] Importing welcome.component.html.trap.gz (446 of 489)
+[2024-04-23 11:12:44] Importing welcome.component.spec.ts.trap.gz (447 of 489)
+[2024-04-23 11:12:44] Importing welcome.component.ts.trap.gz (448 of 489)
+[2024-04-23 11:12:44] Importing welcome-banner.component.html.trap.gz (449 of 489)
+[2024-04-23 11:12:44] Importing welcome-banner.component.spec.ts.trap.gz (450 of 489)
+[2024-04-23 11:12:44] Importing welcome-banner.component.ts.trap.gz (451 of 489)
+[2024-04-23 11:12:44] Importing CopyShader.js.trap.gz (452 of 489)
+[2024-04-23 11:12:44] Importing EffectComposer.js.trap.gz (453 of 489)
+[2024-04-23 11:12:44] Importing MaskPass.js.trap.gz (454 of 489)
+[2024-04-23 11:12:44] Importing OrbitControls.js.trap.gz (455 of 489)
+[2024-04-23 11:12:44] Importing RenderPass.js.trap.gz (456 of 489)
+[2024-04-23 11:12:44] Importing ShaderPass.js.trap.gz (457 of 489)
+[2024-04-23 11:12:44] Importing three.js.trap.gz (458 of 489)
+[2024-04-23 11:12:49] Importing threejs-demo.html.trap.gz (459 of 489)
+[2024-04-23 11:12:49] Importing ContractABIs.ts.trap.gz (460 of 489)
+[2024-04-23 11:12:49] Importing index.ts.trap.gz (461 of 489)
+[2024-04-23 11:12:49] Importing environment.prod.ts.trap.gz (462 of 489)
+[2024-04-23 11:12:49] Importing environment.ts.trap.gz (463 of 489)
+[2024-04-23 11:12:49] Importing bonusPayload.ts.trap.gz (464 of 489)
+[2024-04-23 11:12:49] Importing codingChallenges.ts.trap.gz (465 of 489)
+[2024-04-23 11:12:49] Importing domXss.ts.trap.gz (466 of 489)
+[2024-04-23 11:12:50] Importing forgedFeedback.ts.trap.gz (467 of 489)
+[2024-04-23 11:12:50] Importing loginAdmin.ts.trap.gz (468 of 489)
+[2024-04-23 11:12:50] Importing loginBender.ts.trap.gz (469 of 489)
+[2024-04-23 11:12:50] Importing loginJim.ts.trap.gz (470 of 489)
+[2024-04-23 11:12:50] Importing passwordStrength.ts.trap.gz (471 of 489)
+[2024-04-23 11:12:50] Importing privacyPolicy.ts.trap.gz (472 of 489)
+[2024-04-23 11:12:50] Importing scoreBoard.ts.trap.gz (473 of 489)
+[2024-04-23 11:12:50] Importing viewBasket.ts.trap.gz (474 of 489)
+[2024-04-23 11:12:50] Importing helpers.ts.trap.gz (475 of 489)
+[2024-04-23 11:12:50] Importing index.ts.trap.gz (476 of 489)
+[2024-04-23 11:12:50] Importing tutorialUnavailable.ts.trap.gz (477 of 489)
+[2024-04-23 11:12:50] Importing index.html.trap.gz (478 of 489)
+[2024-04-23 11:12:50] Importing karma.conf.js.trap.gz (479 of 489)
+[2024-04-23 11:12:50] Importing main.ts.trap.gz (480 of 489)
+[2024-04-23 11:12:50] Importing polyfills.ts.trap.gz (481 of 489)
+[2024-04-23 11:12:50] Importing test.ts.trap.gz (482 of 489)
+[2024-04-23 11:12:50] Importing tsconfig.app.json.trap.gz (483 of 489)
+[2024-04-23 11:12:50] Importing tsconfig.spec.json.trap.gz (484 of 489)
+[2024-04-23 11:12:50] Importing tsconfig.base.json.trap.gz (485 of 489)
+[2024-04-23 11:12:50] Importing tsconfig.json.codeql-typescript-typetable.trap.gz (486 of 489)
+[2024-04-23 11:12:50] Importing tsconfig.json.trap.gz (487 of 489)
+[2024-04-23 11:12:50] Importing webpack.angular.js.trap.gz (488 of 489)
+[2024-04-23 11:12:50] Importing sourceLocationPrefix.trap.gz (489 of 489)
+[2024-04-23 11:12:50] [PROGRESS] dataset import> Merging relations
+[2024-04-23 11:12:51] Merging 1 fragment for 'files'.
+[2024-04-23 11:12:51] Merged 3896 bytes (3.80 KiB) for 'files'.
+[2024-04-23 11:12:51] Merging 1 fragment for 'folders'.
+[2024-04-23 11:12:51] Merged 888 bytes for 'folders'.
+[2024-04-23 11:12:51] Merging 1 fragment for 'containerparent'.
+[2024-04-23 11:12:51] Merged 4776 bytes (4.66 KiB) for 'containerparent'.
+[2024-04-23 11:12:51] Merging 30 fragments for 'locations_default'.
+[2024-04-23 11:12:54] Merged 58484976 bytes (55.78 MiB) for 'locations_default'.
+[2024-04-23 11:12:54] Merging 32 fragments for 'hasLocation'.
+[2024-04-23 11:12:57] Merged 25413928 bytes (24.24 MiB) for 'hasLocation'.
+[2024-04-23 11:12:57] Merging 1 fragment for 'extraction_data'.
+[2024-04-23 11:12:57] Merged 7792 bytes (7.61 KiB) for 'extraction_data'.
+[2024-04-23 11:12:57] Merging 1 fragment for 'scopes'.
+[2024-04-23 11:12:57] Merged 290024 bytes (283.23 KiB) for 'scopes'.
+[2024-04-23 11:12:57] Merging 1 fragment for 'comments'.
+[2024-04-23 11:12:57] Merged 285860 bytes (279.16 KiB) for 'comments'.
+[2024-04-23 11:12:57] Merging 1 fragment for 'indentation'.
+[2024-04-23 11:12:57] Merged 1410944 bytes (1.35 MiB) for 'indentation'.
+[2024-04-23 11:12:57] Merging 1 fragment for 'numlines'.
+[2024-04-23 11:12:57] Merged 35376 bytes (34.55 KiB) for 'numlines'.
+[2024-04-23 11:12:57] Merging 17 fragments for 'tokeninfo'.
+[2024-04-23 11:12:59] Merged 32615920 bytes (31.10 MiB) for 'tokeninfo'.
+[2024-04-23 11:12:59] Merging 1 fragment for 'next_token'.
+[2024-04-23 11:12:59] Merged 114344 bytes (111.66 KiB) for 'next_token'.
+[2024-04-23 11:12:59] Merging 1 fragment for 'jsdoc'.
+[2024-04-23 11:12:59] Merged 114540 bytes (111.86 KiB) for 'jsdoc'.
+[2024-04-23 11:12:59] Merging 1 fragment for 'jsdoc_tags'.
+[2024-04-23 11:12:59] Merged 373560 bytes (364.80 KiB) for 'jsdoc_tags'.
+[2024-04-23 11:12:59] Merging 1 fragment for 'jsdoc_tag_descriptions'.
+[2024-04-23 11:12:59] Merged 31880 bytes (31.13 KiB) for 'jsdoc_tag_descriptions'.
+[2024-04-23 11:12:59] Merging 1 fragment for 'jsdoc_tag_names'.
+[2024-04-23 11:12:59] Merged 39352 bytes (38.43 KiB) for 'jsdoc_tag_names'.
+[2024-04-23 11:12:59] Merging 1 fragment for 'jsdoc_type_exprs'.
+[2024-04-23 11:12:59] Merged 464080 bytes (453.20 KiB) for 'jsdoc_type_exprs'.
+[2024-04-23 11:12:59] Merging 1 fragment for 'toplevels'.
+[2024-04-23 11:12:59] Merged 13792 bytes (13.47 KiB) for 'toplevels'.
+[2024-04-23 11:12:59] Merging 2 fragments for 'stmts'.
+[2024-04-23 11:12:59] Merged 2596240 bytes (2.48 MiB) for 'stmts'.
+[2024-04-23 11:12:59] Merging 2 fragments for 'stmt_containers'.
+[2024-04-23 11:12:59] Merged 1038496 bytes (1014.16 KiB) for 'stmt_containers'.
+[2024-04-23 11:12:59] Merging 12 fragments for 'exprs'.
+[2024-04-23 11:13:00] Merged 22010260 bytes (20.99 MiB) for 'exprs'.
+[2024-04-23 11:13:00] Merging 11 fragments for 'enclosing_stmt'.
+[2024-04-23 11:13:01] Merged 8395760 bytes (8.01 MiB) for 'enclosing_stmt'.
+[2024-04-23 11:13:01] Merging 12 fragments for 'expr_containers'.
+[2024-04-23 11:13:01] Merged 8825080 bytes (8.42 MiB) for 'expr_containers'.
+[2024-04-23 11:13:01] Merging 7 fragments for 'literals'.
+[2024-04-23 11:13:02] Merged 7285212 bytes (6.95 MiB) for 'literals'.
+[2024-04-23 11:13:02] Merging 1 fragment for 'variables'.
+[2024-04-23 11:13:02] Merged 1066440 bytes (1.02 MiB) for 'variables'.
+[2024-04-23 11:13:02] Merging 3 fragments for 'bind'.
+[2024-04-23 11:13:02] Merged 1794848 bytes (1.71 MiB) for 'bind'.
+[2024-04-23 11:13:02] Merging 1 fragment for 'scopenodes'.
+[2024-04-23 11:13:02] Merged 290016 bytes (283.22 KiB) for 'scopenodes'.
+[2024-04-23 11:13:02] Merging 1 fragment for 'scopenesting'.
+[2024-04-23 11:13:02] Merged 290016 bytes (283.22 KiB) for 'scopenesting'.
+[2024-04-23 11:13:02] Merging 1 fragment for 'decl'.
+[2024-04-23 11:13:02] Merged 535584 bytes (523.03 KiB) for 'decl'.
+[2024-04-23 11:13:02] Merging 1 fragment for 'is_arguments_object'.
+[2024-04-23 11:13:02] Merged 82936 bytes (80.99 KiB) for 'is_arguments_object'.
+[2024-04-23 11:13:02] Merging 1 fragment for 'entry_cfg_node'.
+[2024-04-23 11:13:02] Merged 233144 bytes (227.68 KiB) for 'entry_cfg_node'.
+[2024-04-23 11:13:02] Merging 1 fragment for 'exit_cfg_node'.
+[2024-04-23 11:13:02] Merged 233144 bytes (227.68 KiB) for 'exit_cfg_node'.
+[2024-04-23 11:13:02] Merging 14 fragments for 'successor'.
+[2024-04-23 11:13:03] Merged 11063264 bytes (10.55 MiB) for 'successor'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'is_externs'.
+[2024-04-23 11:13:03] Merged 440 bytes for 'is_externs'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'filetype'.
+[2024-04-23 11:13:03] Merged 3896 bytes (3.80 KiB) for 'filetype'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'extraction_time'.
+[2024-04-23 11:13:03] Merged 175320 bytes (171.21 KiB) for 'extraction_time'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'jsdoc_prefix_qualifier'.
+[2024-04-23 11:13:03] Merged 7192 bytes (7.02 KiB) for 'jsdoc_prefix_qualifier'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'jsdoc_errors'.
+[2024-04-23 11:13:03] Merged 3200 bytes (3.12 KiB) for 'jsdoc_errors'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'jsdoc_record_field_name'.
+[2024-04-23 11:13:03] Merged 5964 bytes (5.82 KiB) for 'jsdoc_record_field_name'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'jsdoc_has_new_parameter'.
+[2024-04-23 11:13:03] Merged 28 bytes for 'jsdoc_has_new_parameter'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'properties'.
+[2024-04-23 11:13:03] Merged 640700 bytes (625.68 KiB) for 'properties'.
+[2024-04-23 11:13:03] Merging 1 fragment for 'regexpterm'.
+[2024-04-23 11:13:04] Merged 1797600 bytes (1.71 MiB) for 'regexpterm'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'regexp_const_value'.
+[2024-04-23 11:13:04] Merged 503840 bytes (492.03 KiB) for 'regexp_const_value'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'guard_node'.
+[2024-04-23 11:13:04] Merged 772896 bytes (754.78 KiB) for 'guard_node'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_module'.
+[2024-04-23 11:13:04] Merged 6360 bytes (6.21 KiB) for 'is_module'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_nodejs'.
+[2024-04-23 11:13:04] Merged 160 bytes for 'is_nodejs'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'array_size'.
+[2024-04-23 11:13:04] Merged 69816 bytes (68.18 KiB) for 'array_size'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_greedy'.
+[2024-04-23 11:13:04] Merged 8044 bytes (7.86 KiB) for 'is_greedy'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_capture'.
+[2024-04-23 11:13:04] Merged 17024 bytes (16.62 KiB) for 'is_capture'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_inverted'.
+[2024-04-23 11:13:04] Merged 340 bytes for 'is_inverted'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'local_type_names'.
+[2024-04-23 11:13:04] Merged 48480 bytes (47.34 KiB) for 'local_type_names'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'typedecl'.
+[2024-04-23 11:13:04] Merged 32320 bytes (31.56 KiB) for 'typedecl'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_method'.
+[2024-04-23 11:13:04] Merged 25272 bytes (24.68 KiB) for 'is_method'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'has_rest_parameter'.
+[2024-04-23 11:13:04] Merged 532 bytes for 'has_rest_parameter'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_static'.
+[2024-04-23 11:13:04] Merged 668 bytes for 'is_static'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'jump_targets'.
+[2024-04-23 11:13:04] Merged 6016 bytes (5.88 KiB) for 'jump_targets'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'char_class_escape'.
+[2024-04-23 11:13:04] Merged 3056 bytes (2.98 KiB) for 'char_class_escape'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'range_quantifier_lower_bound'.
+[2024-04-23 11:13:04] Merged 576 bytes for 'range_quantifier_lower_bound'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_generator'.
+[2024-04-23 11:13:04] Merged 716 bytes for 'is_generator'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'isOptionalChaining'.
+[2024-04-23 11:13:04] Merged 1884 bytes (1.84 KiB) for 'isOptionalChaining'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'range_quantifier_upper_bound'.
+[2024-04-23 11:13:04] Merged 464 bytes for 'range_quantifier_upper_bound'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'backref'.
+[2024-04-23 11:13:04] Merged 56 bytes for 'backref'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'toplevel_parent_xml_node'.
+[2024-04-23 11:13:04] Merged 10552 bytes (10.30 KiB) for 'toplevel_parent_xml_node'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'xmlElements'.
+[2024-04-23 11:13:04] Merged 43840 bytes (42.81 KiB) for 'xmlElements'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'xmllocations'.
+[2024-04-23 11:13:04] Merged 43488 bytes (42.47 KiB) for 'xmllocations'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'xmlAttrs'.
+[2024-04-23 11:13:04] Merged 76104 bytes (74.32 KiB) for 'xmlAttrs'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_es2015_module'.
+[2024-04-23 11:13:04] Merged 1048 bytes (1.02 KiB) for 'is_es2015_module'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'xmlComments'.
+[2024-04-23 11:13:04] Merged 1168 bytes (1.14 KiB) for 'xmlComments'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_computed'.
+[2024-04-23 11:13:04] Merged 48 bytes for 'is_computed'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'regexp_parse_errors'.
+[2024-04-23 11:13:04] Merged 48 bytes for 'regexp_parse_errors'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'json'.
+[2024-04-23 11:13:04] Merged 3060 bytes (2.99 KiB) for 'json'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'json_locations'.
+[2024-04-23 11:13:04] Merged 1224 bytes (1.20 KiB) for 'json_locations'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'json_literals'.
+[2024-04-23 11:13:04] Merged 1560 bytes (1.52 KiB) for 'json_literals'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'json_properties'.
+[2024-04-23 11:13:04] Merged 1608 bytes (1.57 KiB) for 'json_properties'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'typeexprs'.
+[2024-04-23 11:13:04] Merged 52440 bytes (51.21 KiB) for 'typeexprs'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_abstract_member'.
+[2024-04-23 11:13:04] Merged 920 bytes for 'is_abstract_member'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_optional_member'.
+[2024-04-23 11:13:04] Merged 244 bytes for 'is_optional_member'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'local_namespace_names'.
+[2024-04-23 11:13:04] Merged 34572 bytes (33.76 KiB) for 'local_namespace_names'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'namespacedecl'.
+[2024-04-23 11:13:04] Merged 23048 bytes (22.51 KiB) for 'namespacedecl'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'has_type_keyword'.
+[2024-04-23 11:13:04] Merged 932 bytes for 'has_type_keyword'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'typebind'.
+[2024-04-23 11:13:04] Merged 8888 bytes (8.68 KiB) for 'typebind'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'has_readonly_keyword'.
+[2024-04-23 11:13:04] Merged 1480 bytes (1.45 KiB) for 'has_readonly_keyword'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'has_private_keyword'.
+[2024-04-23 11:13:04] Merged 1548 bytes (1.51 KiB) for 'has_private_keyword'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'parameter_fields'.
+[2024-04-23 11:13:04] Merged 3924 bytes (3.83 KiB) for 'parameter_fields'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'has_public_keyword'.
+[2024-04-23 11:13:04] Merged 1592 bytes (1.55 KiB) for 'has_public_keyword'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_optional_parameter_declaration'.
+[2024-04-23 11:13:04] Merged 68 bytes for 'is_optional_parameter_declaration'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'template_placeholder_tag_info'.
+[2024-04-23 11:13:04] Merged 5136 bytes (5.02 KiB) for 'template_placeholder_tag_info'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'is_async'.
+[2024-04-23 11:13:04] Merged 344 bytes for 'is_async'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'js_parse_errors'.
+[2024-04-23 11:13:04] Merged 416 bytes for 'js_parse_errors'.
+[2024-04-23 11:13:04] Merging 1 fragment for 'namespacebind'.
+[2024-04-23 11:13:05] Merged 32 bytes for 'namespacebind'.
+[2024-04-23 11:13:05] Merging 1 fragment for 'has_definite_assignment_assertion'.
+[2024-04-23 11:13:05] Merged 48 bytes for 'has_definite_assignment_assertion'.
+[2024-04-23 11:13:05] Merging 1 fragment for 'has_declare_keyword'.
+[2024-04-23 11:13:05] Merged 4 bytes for 'has_declare_keyword'.
+[2024-04-23 11:13:05] Merging 1 fragment for 'sourceLocationPrefix'.
+[2024-04-23 11:13:05] Merged 4 bytes for 'sourceLocationPrefix'.
+[2024-04-23 11:13:05] Saving string and id pools to disk.
+[2024-04-23 11:13:05] Finished importing TRAP files.
+[2024-04-23 11:13:05] Read 655.98 MiB of uncompressed TRAP data.
+[2024-04-23 11:13:05] Relation data size: 181.10 MiB (merge rate: 12.99 MiB/s)
+[2024-04-23 11:13:05] String pool size: 14.03 MiB
+[2024-04-23 11:13:05] ID pool size: 175.00 MiB
+[2024-04-23 11:13:05] [PROGRESS] dataset import> Finished writing database (relations: 181.10 MiB; string pool: 14.03 MiB).
+[2024-04-23 11:13:05] Pausing evaluation to close the cache at sequence stamp o+3
+[2024-04-23 11:13:05] The disk cache is freshly trimmed; leave it be.
+[2024-04-23 11:13:05] Unpausing evaluation
+[2024-04-23 11:13:05] Plumbing command codeql dataset import completed.
+[2024-04-23 11:13:05] [PROGRESS] database finalize> TRAP import complete (1m9s).
+[2024-04-23 11:13:05] Running plumbing command: codeql database cleanup -- C:\upv\juice-shop\frontend\db-javascript
+[2024-04-23 11:13:11] [PROGRESS] database cleanup> Cleaning up existing TRAP files after import...
+[2024-04-23 11:13:11] [PROGRESS] database cleanup> TRAP files cleaned up (483ms).
+[2024-04-23 11:13:11] [PROGRESS] database cleanup> Cleaning up scratch directory...
+[2024-04-23 11:13:11] [PROGRESS] database cleanup> Scratch directory cleaned up (0ms).
+[2024-04-23 11:13:11] Running plumbing command: codeql dataset cleanup -- C:\upv\juice-shop\frontend\db-javascript\db-javascript
+[2024-04-23 11:13:11] [PROGRESS] dataset cleanup> Cleaning up dataset in C:\upv\juice-shop\frontend\db-javascript\db-javascript.
+[2024-04-23 11:13:11] Trimming disk cache at C:\upv\juice-shop\frontend\db-javascript\db-javascript\default\cache in mode trim.
+[2024-04-23 11:13:11] Sequence stamp origin is -6192789683870024821
+[2024-04-23 11:13:11] Pausing evaluation to quickly trim memory at sequence stamp o+0
+[2024-04-23 11:13:11] Unpausing evaluation
+[2024-04-23 11:13:11] Pausing evaluation to zealously trim disk at sequence stamp o+1
+[2024-04-23 11:13:11] Unpausing evaluation
+[2024-04-23 11:13:11] Trimming completed (16ms): Trimmed disposable data from cache.
+[2024-04-23 11:13:11] Pausing evaluation to close the cache at sequence stamp o+2
+[2024-04-23 11:13:11] The disk cache is freshly trimmed; leave it be.
+[2024-04-23 11:13:11] Unpausing evaluation
+[2024-04-23 11:13:11] [PROGRESS] dataset cleanup> Trimmed disposable data from cache.
+[2024-04-23 11:13:11] [PROGRESS] dataset cleanup> Finalizing dataset in C:\upv\juice-shop\frontend\db-javascript\db-javascript
+[2024-04-23 11:13:11] [DETAILS] dataset cleanup> Finished deleting ID pool from C:\upv\juice-shop\frontend\db-javascript\db-javascript (41ms).
+[2024-04-23 11:13:11] Plumbing command codeql dataset cleanup completed.
+[2024-04-23 11:13:11] Plumbing command codeql database cleanup completed with status 0.
+[2024-04-23 11:13:11] [PROGRESS] database finalize> Finished zipping source archive (1.76 MiB).
+[2024-04-23 11:13:11] Plumbing command codeql database finalize completed.
+[2024-04-23 11:13:11] [PROGRESS] database create> Successfully created database at C:\upv\juice-shop\frontend\db-javascript.
+[2024-04-23 11:13:11] Terminating normally.
